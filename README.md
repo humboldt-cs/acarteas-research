@@ -23,7 +23,7 @@ for coding in microsoft visual studio 2017
 To run a node.js file from the command line:
 1. Path to the file.
 2. Type: "node <filename.js>"
-3. navigate to webpage: "http://localhost:<port>/"
+3. navigate to webpage: "http://localhost:port/"
 
 --
 
