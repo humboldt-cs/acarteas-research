@@ -12,17 +12,18 @@ https://www.w3schools.com/nodejs
 
 --
 
-for coding in microsoft visual studio 2017 select the following packages from "Get Tools and features"
-Select: "Node.js development"
-select: "ASP.NET and web development"
-select: "Universal windows platform development"
+for coding in microsoft visual studio 2017 
+1. select the following packages from "Get Tools and features"
+2. Select: "Node.js development"
+3. select: "ASP.NET and web development"
+4. select: "Universal windows platform development"
 
 --
 
 To run a node.js file from the command line:
-Path to file.
-Type: "node <filename.js>"
-navigate to webpage: "http://localhost:<port..example: 1337>/"
+1. Path to the file.
+2. Type: "node <filename.js>"
+3. navigate to webpage: "http://localhost:<port>/"
 
 --
 
