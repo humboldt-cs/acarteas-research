@@ -1,0 +1,13 @@
+
+typescript
+
+compile code through jquery
+
+
+1. capture the results of a ping to a server.
+
+2.  replace that with capturing the results of your own custom program
+
+3.  then catch the results of a complie
+
+

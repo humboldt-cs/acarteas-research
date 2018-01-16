@@ -1,0 +1,29 @@
+the goal is like an independent hackerrank.  
+this is for removing as much time spent grading as humanly possible.  
+
+--
+
+software engineering should be a year long -- portfolio based.
+gamasutra.com  -> the business of game design.
+for learning and progression its about quantity, not quality.
+
+learn through discovery.  
+
+---
+
+setup a wordpress site
+
+collate the good sites, tutorials. 
+
+server side scripting.
+
+write a script that will safely and asyncly call a system command.  like build in G++ for example.
+
+chunk this:  build.  build run.  build run and something else.  
+
+may require use of a container like DOCKER for example.
+
+js.node call a command line function, capture the output, return to website.  
+
+on website you click a button, goes to node, node calls ping, shows up on website.
+
