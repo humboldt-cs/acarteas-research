@@ -27,3 +27,12 @@ To run a node.js file from the command line:
 
 --
 
+We have added the NPM module "Formidable" to our project!
+
+1. Please open a commmand prompt (run as admin) 
+2. navigate to: C:\Users\!!Your Name!!>
+3. type "npm install formidable"
+
+--
+
+ 
