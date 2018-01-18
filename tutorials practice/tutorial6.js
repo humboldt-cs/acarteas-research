@@ -1,3 +1,5 @@
+//read a file, when a file is read, trigger a message log, check for errors if it can't open.
+
 'use strict';
 var http = require('http');
 var url = require('url');
