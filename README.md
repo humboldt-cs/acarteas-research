@@ -2,6 +2,12 @@
 
 --
 
+Grant research project for Professor Adam Carter, Humboldt State University.
+Research assistant: Jack Daniel Kinne
+Research assistant: Eric Misner
+
+--
+
 for running programs directly from the command prompt, go to this site and install:
 https://nodejs.org/en/
 
@@ -35,4 +41,11 @@ We have added the NPM module "Formidable" to our project!
 
 --
 
+We have added the NPM module "nodemailer" to our project!
+
+1. Please open a commmand prompt (run as admin) 
+2. navigate to: C:\Users\!!Your Name!!>
+3. type "npm install nodemailer"
+
+--
  
