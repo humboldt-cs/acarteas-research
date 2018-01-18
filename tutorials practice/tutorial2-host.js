@@ -5,7 +5,7 @@
 'use strict';
 var http = require('http');
 var port = process.env.PORT || 1337;
-var dt = require('./firstModule');
+var dt = require('./tutorial2-module');
 
 
 http.createServer(function (req, res) {
