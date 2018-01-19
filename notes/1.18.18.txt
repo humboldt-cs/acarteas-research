@@ -1,0 +1,27 @@
+
+server is == lumberhacks.org/8080
+
+next steps:
+
+send code.
+
+run code on server.  (run executable as a non-privileged user)
+command line entry:
+cl name.cpp
+
+
+have node run the program
+
+capture the output.
+
+return the output.
+
+
+
+--
+
+look into express npm to build more robot websites.  
+
+
+
+

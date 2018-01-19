@@ -16,6 +16,8 @@ http.createServer(function (req, res) {
       var oldpath = files.filetoupload.path;
 
       //choose the path for the files on the server here:
+      //relative paths
+      	
       var newpath = 'C:/Users/Jack/Google Drive/school docs/Grant 2018/acarteas-research/tutorials practice/tutorial 7/serverFileTest/' + files.filetoupload.name;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;

@@ -1,0 +1,26 @@
+
+user:
+research
+pass:
+&UJMnhy6789o
+
+1.  run putty
+2.  connect to adam server
+
+3.  run remote desktop connection from windows menu
+
+4.  enter: localhost:3388
+
+4.  login with user data above.  
+
+
+8080 is the only port open to the internet right now
+from this server!
+
+Internet information services (ISS) manager.
+
+goggle and do a tutorial!
+
+
+
+
