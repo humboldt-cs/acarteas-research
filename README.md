@@ -45,6 +45,6 @@ List of NPM modules for our project:
 	c. "npm install formidable"
 	//for capturing forms 
 	d. "npm install compile-run"
-
+	e. "npm install JSCPP"
 --
  
