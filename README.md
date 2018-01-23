@@ -44,6 +44,7 @@ List of NPM modules for our project:
 	//for running commands from the command line
 	c. "npm install formidable"
 	//for capturing forms 
+	d. "npm install compile-run"
 
 --
  

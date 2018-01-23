@@ -1,8 +1,9 @@
-
+	
 var http = require('http');
 var formidable = require('formidable');
 var fs = require('fs');
-
+//required for node-command-line
+var cmd = require('node-command-line'), Promise = require('bluebird');
 
 //create the server
 http.createServer(function (req, res) {
@@ -18,6 +19,12 @@ http.createServer(function (req, res) {
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         res.write('File uploaded and moved!');
+        
+        function runSingleCommandWithoutwait() {
+        	cmd.run('time');
+        	console.log('time has been shown.');
+        }
+
         res.end();
       });
  });
