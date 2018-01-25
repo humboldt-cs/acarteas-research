@@ -1,4 +1,5 @@
 var JSCPP = require("JSCPP");
+
 var code =    "#include <iostream>"
             + "using namespace std;"
             + "int main() {"

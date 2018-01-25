@@ -2,8 +2,7 @@
 var http = require('http');
 var formidable = require('formidable');
 var fs = require('fs');
-//required for node-command-line
-var cmd = require('node-command-line'), Promise = require('bluebird');
+var JSCPP = require("JSCPP");
 
 //create the server
 http.createServer(function (req, res) {
@@ -19,11 +18,25 @@ http.createServer(function (req, res) {
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         res.write('File uploaded and moved!');
-        
-        function runSingleCommandWithoutwait() {
-        	cmd.run('time');
-        	console.log('time has been shown.');
-        }
+
+
+//testing in regards to compiling the source code!
+
+        var sourceCode;
+        var readThis = './somefilefolder/' + files.filetoupload.name;
+		//read the file        
+        fs.readFile( readThis , function(err, contents) {
+    		console.log(contents);
+    		sourceCode = contents;
+		});
+
+        //compile the file
+        let code =    sourceCode.toString();
+		var input = '4';
+		var exitcode = JSCPP.run(code, input);
+		console.info('program exited with code ' + exitcode);
+
+//end testing.  this file DOES work otherwise.
 
         res.end();
       });
