@@ -57,4 +57,4 @@ var exe_name = 'cl.exe';
 var cpp = 'helloworld.cpp';
 var full_command = "compilejk" + " " + vs_path + " " + local_path + " " + cpp_files + " " + output_exe;
 console.log(full_command);
-//runCmdHandler("./", full_command);
+runCmdHandler("./", full_command);
