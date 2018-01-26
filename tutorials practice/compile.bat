@@ -3,7 +3,7 @@ SET localPath=%2
 SET cppFiles=%3
 SET outputFileExe=%4
 call %vsCommand%
-cd /D %localPath%
+cd /C %localPath%
 cl %cppFiles% /Fe%outputFileExe
 
 @REM hard-coded example
