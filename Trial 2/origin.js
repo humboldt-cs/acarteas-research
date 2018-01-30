@@ -1,13 +1,15 @@
-//exports.htmlListen = function()
-//{
+
   var http = require('http');
   var formidable = require('formidable');
   var fs = require('fs');
-  //var JSCPP = require("JSCPP");
   var compile = require('./modules/compile-module');
   var runFile = require('./modules/run-module');
+
+  //path variable for our executable files
   var path = './main.exe';
+  //.cpp file folder location
   var sourcefile = 'helloworld.cpp';
+
   //create the server
   http.createServer(function (req, res) {
     if (req.url == '/fileupload') {
@@ -15,38 +17,28 @@
       form.parse(req, function (err, fields, files) {
         var oldpath = files.filetoupload.path;
 
-        //choose the path for the files on the server here:
-        //relative paths
-          
-        var newpath = './somefilefolder/' + files.filetoupload.name;
+        //choose the path for the files on the server here
+        var newpath = './' + files.filetoupload.name;
+
+        //rename and move the file
         fs.rename(oldpath, newpath, function (err) {
           if (err) throw err;
           res.write('File uploaded and moved!');
 
 
-  //testing in regards to compiling the source code!
-
+  		//compiling
           var sourceCode;
-          var readThis = './somefilefolder/' + files.filetoupload.name;
-      //read the file        
+          var readThis = './' + files.filetoupload.name;
+      	//read the file        
           fs.readFile( readThis , function(err, contents) {
           console.log(contents);
           sourceCode = contents;
-          //might work calling modules for compile and running
+          //calling our compile module here
           compile.compileFunction(sourcefile);
-
+          //calling our run module here
           runFile.runningExe(path);
       });
-  /*
-          //compile the file
-          let code =    sourceCode.toString();
-      var input = '4';
-      var exitcode = JSCPP.run(code, input);
-      console.info('program exited with code ' + exitcode);
-  */
-  //end testing.  this file DOES work otherwise.
 
-  //        res.end();
         });
    });
 
@@ -60,4 +52,3 @@
       return res.end();
     }
   }).listen(8080); //, '137.150.122.17'     
-//};
