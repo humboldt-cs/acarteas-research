@@ -17,3 +17,16 @@ we need to make a run module to
 
 display output in HTML
 
+--
+
+# 1.30.18
+
+1. we need to make callbacks to stagger dependencies between aynsc calls.
+
+2. make .bat files programmatically.
+
+3. 
+
+
+
+

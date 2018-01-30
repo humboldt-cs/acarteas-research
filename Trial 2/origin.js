@@ -38,13 +38,13 @@
           
           //calling our compile module here
           compile.compileFunction(sourcefile);
-          
+
+                  
+          //calling our run module here
+          runFile.runningExe(path);
       //});  for moving the file
 
         });
-
-          //calling our run module here
-          runFile.runningExe(path);
    });
 
       //note: if there is an error in this section of code, it'll break the path on line 11.
