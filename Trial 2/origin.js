@@ -1,9 +1,8 @@
-
   var http = require('http');
   var formidable = require('formidable');
   var fs = require('fs');
-  var compile = require('./modules/compile-module');
-  var runFile = require('./modules/run-module');
+  var compile = require('./compile-module');
+  var runFile = require('./run-module');
 
   //path variable for our executable files
   var path = './main.exe';
@@ -20,11 +19,13 @@
         //choose the path for the files on the server here
         var newpath = './' + files.filetoupload.name;
 
+        /* this is for moving the file, which we are not doinng.
+        
         //rename and move the file
         fs.rename(oldpath, newpath, function (err) {
           if (err) throw err;
           res.write('File uploaded and moved!');
-
+		*/ //for moving the file
 
   		//compiling
           var sourceCode;
@@ -33,13 +34,17 @@
           fs.readFile( readThis , function(err, contents) {
           console.log(contents);
           sourceCode = contents;
+          
+          
           //calling our compile module here
           compile.compileFunction(sourcefile);
-          //calling our run module here
-          runFile.runningExe(path);
-      });
+          
+      //});  for moving the file
 
         });
+
+          //calling our run module here
+          runFile.runningExe(path);
    });
 
       //note: if there is an error in this section of code, it'll break the path on line 11.

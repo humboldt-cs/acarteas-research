@@ -29,7 +29,7 @@ exports.compileFunction = function(sourceCpp){
 	    console.error("Error trying to execute command '" + cmd + "' in directory '" + dir + "'");
 	    console.error(e);
 	    console.log("error", e.message);
-	    console.log("finished");
+	    //console.log("executing CMD commands");
 	    return;
 	  }
 
@@ -42,7 +42,7 @@ exports.compileFunction = function(sourceCpp){
 	  });
 
 	  process.on('exit', function (code) {
-	    console.log("finished");
+	    console.log("compile-module is finished.");
 	  });
 	}
 
@@ -54,7 +54,7 @@ exports.compileFunction = function(sourceCpp){
 	//runCmdHandler(".", "ls -lh .");
 	//runCmdHandler("/home/anton/src/github/grunt-prepr", "grunt");
 	var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
-	var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial 2/modules\"";
+	var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial 2\""; //here we took a / off the end here!
 	var cpp_files = "helloworld.cpp";
 	var output_exe = "main.exe"
 	var exe_name = 'cl.exe';

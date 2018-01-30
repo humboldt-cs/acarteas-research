@@ -9,5 +9,5 @@
 
 @REM hard-coded example
 call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat"
-CD "C:\Users\research\Desktop\acarteas-research\Trial 2\modules"
+CD "C:\Users\research\Desktop\acarteas-research\Trial 2"
 cl.exe helloworld.cpp /Femain.exe

@@ -11,14 +11,14 @@ exports.runningExe = function(path)
     exec.execFile(path1,function(err,data)
     {
       //console.log(err);
-      //console.log(data);
+      console.log("output to txt file:" + data);
       
       //save to output
 
       fs.writeFile('output.txt',data,function(err)
       {
         if (err) throw err;
-        console.log('you did it');
+        console.log('run module complete - you did it!');
       });
 
     });  
