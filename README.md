@@ -46,5 +46,6 @@ List of NPM modules for our project:
 	//for capturing forms 
 	d. "npm install compile-run"
 	e. "npm install JSCPP"
+	f. "npm install --save async"
 --
  
