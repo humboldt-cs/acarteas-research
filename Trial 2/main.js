@@ -9,6 +9,9 @@
   //.cpp file folder location
   var sourcefile = 'helloworld.cpp';
 
+
+
+
   //create the server
   http.createServer(function (req, res) {
     if (req.url == '/fileupload') {
@@ -34,19 +37,20 @@
           fs.readFile( readThis , function(err, contents) {
           console.log(contents);
           sourceCode = contents;
-          
+
+
           
           //calling our compile module here
-          compile.compileFunction(sourcefile);
+          compile.compileFunction(sourcefile,path);
 
                   
           //calling our run module here
-          runFile.runningExe(path);
+          //
+          //runFile.runningExe(path);
       //});  for moving the file
 
         });
    });
-
       //note: if there is an error in this section of code, it'll break the path on line 11.
     } else {
       res.writeHead(200, {'Content-Type': 'text/html'});
