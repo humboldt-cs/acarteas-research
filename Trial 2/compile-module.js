@@ -1,4 +1,4 @@
-exports.compileFunction = function(sourceCpp){
+exports.compileFunction = function(sourceCpp,path){
 
 
 
@@ -62,5 +62,28 @@ exports.compileFunction = function(sourceCpp){
 	var full_command = "compile" + " " + vs_path + " " + local_path + " " + cpp_files + " " + output_exe;
 	console.log(full_command);
 	runCmdHandler("./", full_command);
+
+  var fs = require('fs');
+  var path1 = path;
+  var exec = require('child_process');
+  
+
+  //var run = function()
+  //{
+    //console.log("fun() start");
+    exec.execFile(path1,function(err,data)
+    {
+      //console.log(err);
+      console.log("output to txt file:" + data);
+      
+      //save to output
+
+      fs.writeFile('output.txt',data,function(err)
+      {
+        if (err) throw err;
+        console.log('run module complete - you did it!');
+      });
+
+    }); 
 
 };
