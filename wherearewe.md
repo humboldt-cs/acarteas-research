@@ -28,5 +28,14 @@ display output in HTML
 3. 
 
 
+# 2.2.18
+
+1.  need more effective callbacks.  explored with npm's (async and others), not much success.
+
+2.  we need to go back to basics.  look at the code line by line, refactor, putting more in more breakpoints so that we can understand our codebase better.  and be cleaner!
+
+
+
+
 
 
