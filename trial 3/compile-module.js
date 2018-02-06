@@ -1,4 +1,5 @@
-exports.compileFunction = function(sourceCpp){
+exports.compileFunction = function(sourceCpp, fileName, callback )
+{
 
 
 
@@ -63,4 +64,5 @@ exports.compileFunction = function(sourceCpp){
 	console.log(full_command);
 	runCmdHandler("./", full_command);
 
+	callback(fileName);
 };

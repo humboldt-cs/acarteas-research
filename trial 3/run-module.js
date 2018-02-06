@@ -1,7 +1,7 @@
-exports.runningExe = function(path)
+exports.runningExe = function(fileName)
 {
   var fs = require('fs');
-  var path1 = path;
+  var path1 = fileName;
   var exec = require('child_process');
   
 

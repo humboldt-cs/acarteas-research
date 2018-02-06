@@ -5,7 +5,7 @@
   var runFile = require('./run-module');
 
   //path variable for our executable files
-  var path = './main.exe';
+  var fileName = './main.exe';
   //.cpp file folder location
   var sourcefile = 'helloworld.cpp';
 
@@ -14,10 +14,19 @@
     if (req.url == '/fileupload') {
       var form = new formidable.IncomingForm();
       form.parse(req, function (err, fields, files) {
-        var oldpath = files.filetoupload.path;
+        
+
+          //calling our compile module here
+          compile.compileFunction(sourcefile, fileName, runFile.runningExe );
+
+                  
+          //calling our run module here
+          //runFile.runningExe(fileName);
+
+        //var oldpath = files.filetoupload.path;
 
         //choose the path for the files on the server here
-        var newpath = './' + files.filetoupload.name;
+        //var newpath = './' + files.filetoupload.name;
 
         /* this is for moving the file, which we are not doinng.
         
@@ -27,24 +36,20 @@
           res.write('File uploaded and moved!');
 		*/ //for moving the file
 
-  		//compiling
-          var sourceCode;
-          var readThis = './' + files.filetoupload.name;
-      	//read the file        
-          fs.readFile( readThis , function(err, contents) {
-          console.log(contents);
-          sourceCode = contents;
-          
-          
-          //calling our compile module here
-          compile.compileFunction(sourcefile);
 
-                  
-          //calling our run module here
-          runFile.runningExe(path);
+  		//compiling
+          //var sourceCode;
+          //var readThis = './' + files.filetoupload.name;
+      	//read the file        
+          //fs.readFile( readThis , function(err, contents) {
+          //console.log(contents);
+          //sourceCode = contents;
+          
+          
+
       //});  for moving the file
 
-        });
+        //});
    });
 
       //note: if there is an error in this section of code, it'll break the path on line 11.
