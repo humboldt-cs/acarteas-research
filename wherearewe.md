@@ -35,7 +35,27 @@ display output in HTML
 2.  we need to go back to basics.  look at the code line by line, refactor, putting more in more breakpoints so that we can understand our codebase better.  and be cleaner!
 
 
+#2.5.18
+
+what we did:
+
+We are now able to capture output in a text document.  and compile, and run, within a served webpage.
+
+we understand callbacks more clearly. 
+
+we are using modularized code for abstraction.  x2.
 
 
 
+what we need:
+
+1. Ambiguously name our sourcefiles.  
+
+2. inputs to file.exe.  
+
+3. file directory saving.
+
+4. we need to keep listening so server stays on for multiple users. //ask adam
+
+5. show "output versus expected" on our exit page.  
 

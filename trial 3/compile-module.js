@@ -44,6 +44,8 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 
 	  process.on('exit', function (code) {
 	    console.log("compile-module is finished.");
+	    callback(fileName);
+		console.log('file ran successfully.');
 	  });
 	}
 
@@ -55,7 +57,7 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	//runCmdHandler(".", "ls -lh .");
 	//runCmdHandler("/home/anton/src/github/grunt-prepr", "grunt");
 	var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
-	var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial 2\""; //here we took a / off the end here!
+	var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial 3\""; //here we took a / off the end here!
 	var cpp_files = "helloworld.cpp";
 	var output_exe = "main.exe"
 	var exe_name = 'cl.exe';
@@ -63,6 +65,6 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	var full_command = "compile" + " " + vs_path + " " + local_path + " " + cpp_files + " " + output_exe;
 	console.log(full_command);
 	runCmdHandler("./", full_command);
-
-	callback(fileName);
+	console.log('executed correctly.');
+	
 };
