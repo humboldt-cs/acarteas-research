@@ -7,7 +7,7 @@
   //path variable for our executable files
   var fileName = './main.exe';
   //.cpp file folder location
-  var sourcefile = 'helloworld.cpp';
+  var sourcefile = '';
 
   //create the server
   http.createServer(function (req, res) {
@@ -15,6 +15,10 @@
       var form = new formidable.IncomingForm();
       form.parse(req, function (err, fields, files) {
         
+        sourcefile  = files;
+
+
+        console.log(files);
 
           //calling our compile module here
           compile.compileFunction(sourcefile, fileName, runFile.runningExe );
