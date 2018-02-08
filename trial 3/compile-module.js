@@ -62,6 +62,19 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	var output_exe = "main.exe"
 	var exe_name = 'cl.exe';
 	var cpp = sourceCpp;
+
+	
+	/*
+1. Create random file name string, create said file
+2. Pase in the following, changing VS location:
+call "vs_path"
+CD "local_path"
+cl.exe cpp_files /Feoutput_exe
+3. run this file
+4. delete this file
+	*/
+
+
 	var full_command = "compile" + " " + vs_path + " " + local_path + " " + cpp_files + " " + output_exe;
 	console.log(full_command);
 	runCmdHandler("./", full_command);
