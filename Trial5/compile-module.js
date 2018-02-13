@@ -64,20 +64,28 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	
 
 	//write complie.bat
-	var batComm = 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat\nCD C:\Users\research\Desktop\acarteas-research\Trial5"\ncl.exe helloworld.cpp /Femain.exe';
+	var batComm1 = 'call \"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat\n';
+	var batComm2 = 'CD C:\Users\research\Desktop\acarteas-research\Trial5\" ';
+	var batComm3 = 'cl.exe helloworld.cpp /Femain.exe';
+	var newLine = '\n';
 	//synchonronus writefile of batch
-	fs.writeFileSync('compile.bat',batComm);
+	fs.writeFileSync('compile.bat',batComm1 + '\n');
+	fs.appendFileSync('compile.bat', newLine);
+	fs.appendFileSync('compile.bat',batComm2);
+	fs.appendFileSync('compile.bat', newLine);
+	fs.appendFileSync('compile.bat',batComm3);
+
 	console.log('bat made');
 	//
 
-	var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
-	console.log(batComm);
-	runCmdHandler("./", batComm);
+	//var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
+
+	runCmdHandler("./", 'compile.bat');
 	console.log('executed correctly.');
 
 
 	//synchoronous delete of batch
-	fs.unlinkSync('./' + file);
-	console.log('bat deleted');
+	//fs.unlinkSync('./' + 'compile.bat');
+	//console.log('bat deleted');
 	
 };
