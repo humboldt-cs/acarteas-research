@@ -46,6 +46,10 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	    console.log("compile-module is finished.");
 	    callback(fileName);
 		console.log('file ran successfully.');
+
+		//synchoronous delete of batch
+		fs.unlinkSync('./' + 'compile.bat');
+		console.log('bat deleted');
 	  });
 	}
 
@@ -64,8 +68,8 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	
 
 	//write complie.bat
-	var batComm1 = 'call \"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat\r\n';
-	var batComm2 = 'CD C:\Users\research\Desktop\acarteas-research\Trial5\"\r\n';
+	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial5\"\r\n';
 	var batComm3 = 'cl.exe helloworld.cpp /Femain.exe';
 
 	//synchonronus writefile of batch
@@ -84,8 +88,5 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	console.log('executed correctly.');
 
 
-	//synchoronous delete of batch
-	//fs.unlinkSync('./' + 'compile.bat');
-	//console.log('bat deleted');
 	
 };
