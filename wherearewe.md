@@ -59,3 +59,11 @@ what we need:
 
 5. show "output versus expected" on our exit page.  
 
+
+
+-----
+# 2.13.18
+the search for another objective
+1. we want to take in the file as a .zip.  then we must unzip the thing.
+
+*.cpp will be the thing we need to add, instead of using the name of the file.  
