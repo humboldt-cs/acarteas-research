@@ -1,10 +1,10 @@
 exports.compileFunction = function(sourceCpp, fileName, callback )
 {
-
-
-
+	//dependencies
+	var fs = require('fs');
 	var spawn = require('child_process').spawn;
 
+	//code: compile sourcecode, spawn and run batch file.
 	function spawnProcess(dir, cmd) {
 	  return (process.platform.toLowerCase().indexOf("win") >= 0) 
 	    ? spawnWindowsProcess(dir, cmd)
@@ -56,15 +56,28 @@ exports.compileFunction = function(sourceCpp, fileName, callback )
 	//runCmdHandler(".", "uname -a");
 	//runCmdHandler(".", "ls -lh .");
 	//runCmdHandler("/home/anton/src/github/grunt-prepr", "grunt");
-	var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
-	var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial4\""; //here we took a / off the end here!
-	var cpp_files = sourceCpp;
+	//var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
+	//var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial5\""; //here we took a / off the end here!
+	
 	var output_exe = "main.exe"
 	var exe_name = 'cl.exe';
-	var cpp = sourceCpp;
-	var full_command = "compile" + " " + vs_path + " " + local_path + " " + cpp_files + " " + output_exe;
-	console.log(full_command);
-	runCmdHandler("./", full_command);
+	
+
+	//write complie.bat
+	var batComm = 'call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\VsDevCmd.bat\nCD C:\Users\research\Desktop\acarteas-research\Trial5"\ncl.exe helloworld.cpp /Femain.exe';
+	//synchonronus writefile of batch
+	fs.writeFileSync('compile.bat',batComm);
+	console.log('bat made');
+	//
+
+	var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
+	console.log(batComm);
+	runCmdHandler("./", batComm);
 	console.log('executed correctly.');
+
+
+	//synchoronous delete of batch
+	fs.unlinkSync('./' + file);
+	console.log('bat deleted');
 	
 };
