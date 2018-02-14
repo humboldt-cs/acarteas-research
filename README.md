@@ -47,5 +47,6 @@ List of NPM modules for our project:
 	d. "npm install compile-run"
 	e. "npm install JSCPP"
 	f. "npm install --save async"
+	g. "npm install extract-zip -g"
 --
  
