@@ -67,3 +67,8 @@ the search for another objective
 1. we want to take in the file as a .zip.  then we must unzip the thing.
 
 *.cpp will be the thing we need to add, instead of using the name of the file.  
+
+# 2.15.2018
+working on inputs
+1. piping inputs in to our generated main
+2. we're braking on the output in the runexe module 
