@@ -1,4 +1,4 @@
-exports.compileFunction = function(fileName, callback )
+exports.compileFunction = function(fileName,file, callback )
 {
 	//dependencies
 	var fs = require('fs');
@@ -44,7 +44,7 @@ exports.compileFunction = function(fileName, callback )
 
 	  process.on('exit', function (code) {
 	    console.log("compile-module is finished.");
-	    callback(fileName);
+	    callback(fileName,file);
 		console.log('file ran successfully.');
 
 		//synchoronous delete of batch
@@ -69,7 +69,7 @@ exports.compileFunction = function(fileName, callback )
 
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
-	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial5\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial6\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
 

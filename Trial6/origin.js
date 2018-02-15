@@ -30,10 +30,10 @@
          
         //we must extract the zip here
         //TODO:  BROKEN HERE.  PLEASE FIX CALLBACK ON FOLLOWING LINE
-        decompressFile.decompressFunction(file, decompressFile.decompressFunction);
+          var returns = decompressFile.decompressFunction(file, decompressFile.decompressFunction);
 
 	      //calling our compile module here
-	      compile.compileFunction(fileName, runFile.runningExe );
+	      compile.compileFunction(fileName,file, runFile.runningExe );
 
         /* this is for moving the file, which we are not doinng.
         //rename and move the file
