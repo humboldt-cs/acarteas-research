@@ -72,3 +72,12 @@ the search for another objective
 working on inputs
 1. piping inputs in to our generated main
 2. we're braking on the output in the runexe module 
+
+
+
+
+
+#adam carter meet 2.15
+
+we need to move the temp file into file directory, and do some tests in a live envrionment.  
+
