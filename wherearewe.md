@@ -81,3 +81,11 @@ working on inputs
 
 we need to move the temp file into file directory, and do some tests in a live envrionment.  
 
+#2.16.18
+
+in callhell.  blocking options do not help.
+
+remove dependency chain, add events to fire functions.
+
+following research link.
+

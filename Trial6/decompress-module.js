@@ -1,4 +1,4 @@
-exports.decompressFunction =  function(fileName, callback )
+exports.decompressFunction =  function(fileName, returnRename)
 {
 
 	//unzips the source file
@@ -6,9 +6,9 @@ exports.decompressFunction =  function(fileName, callback )
 	 
 	decompress(fileName, './').then(files => {
 		//callback(fileName);
-	    console.log('done!');
+	    console.log('step 2: unzipping source.cpp files complete!');
 
 	});
 
-	return 0;
+	return 0 + returnRename;
 };

@@ -1,4 +1,4 @@
-exports.runningExe = function(fileName,file)
+exports.runningExe = function(fileName,file, returnCompile)
 {
   var fs = require('fs');
   var path1 = fileName;
@@ -11,32 +11,33 @@ exports.runningExe = function(fileName,file)
     exec.execFile(path1,function(err,data)
     {
       //console.log(err);
-      console.log("output to txt file:" + data);
+      console.log("step six: output to txt file: " + data);
       
       //save to output
 
       fs.writeFile('output.txt',data,function(err)
       {
         if (err) throw err;
-        console.log('run module complete - you did it!');
+        console.log('step seven: run module complete - you did it!');
         
 
         // cleaning up files
         fs.unlinkSync('./' + fileName);
-        console.log('Main.exe deleted');
+        console.log('step eight: Main.exe deleted');
 
 
         //TODO: PUT THIS BACK IN WHEN WERE READY TO KILL THE ZIP!
-        //fs.unlinkSync('./' + file);
-        //console.log('Zip file deleted');
+        fs.unlinkSync('./' + file);
+        console.log('step nine: Zip file deleted');
         
         var temp = file;
         temp = temp.substring(0,temp.length - 3);
         fs.unlinkSync('./' + temp + 'obj');
-        console.log('object deleted');
+        console.log('step ten: object deleted');
       });
 
 
     });
 
+    return 0+returnCompile;
 };

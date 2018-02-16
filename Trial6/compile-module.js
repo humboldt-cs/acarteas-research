@@ -1,4 +1,4 @@
-exports.compileFunction = function(fileName,file, callback )
+exports.compileFunction = function(fileName,file, returnDecompress )
 {
 	//dependencies
 	var fs = require('fs');
@@ -43,13 +43,14 @@ exports.compileFunction = function(fileName,file, callback )
 	  });
 
 	  process.on('exit', function (code) {
-	    console.log("compile-module is finished.");
-	    callback(fileName,file);
-		console.log('file ran successfully.');
+	    console.log("step four: compile-module is finished.");
+	    //callback(fileName,file);
+		
 
 		//synchoronous delete of batch
 		fs.unlinkSync('./' + 'compile.bat');
-		console.log('bat deleted');
+		console.log('step five: compile.bat deleted');
+
 	  });
 	}
 
@@ -80,14 +81,14 @@ exports.compileFunction = function(fileName,file, callback )
 	
 	fs.appendFileSync('compile.bat',batComm3);
 
-	console.log('bat made');
+	console.log('step three: compile.bat has been made');
 	//
 
 	//var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
 
 	runCmdHandler("./", 'compile.bat');
-	console.log('executed correctly.');
+	console.log('bat executed correctly.');
 
-
+	return 0+ returnDecompress;
 	
 };
