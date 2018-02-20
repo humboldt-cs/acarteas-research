@@ -1,4 +1,4 @@
-exports.compileFunction = function(fileName,file, returnDecompress )
+exports.compileFunction = function(fileName,file)
 {
 	//dependencies
 	var fs = require('fs');
@@ -89,6 +89,6 @@ exports.compileFunction = function(fileName,file, returnDecompress )
 	runCmdHandler("./", 'compile.bat');
 	console.log('bat executed correctly.');
 
-	return 0+ returnDecompress;
+
 	
 };

@@ -1,4 +1,4 @@
-exports.decompressFunction =  function(fileName, returnRename)
+exports.decompressFunction =  function(fileName)
 {
 
 	//unzips the source file
@@ -10,5 +10,5 @@ exports.decompressFunction =  function(fileName, returnRename)
 
 	});
 
-	return 0 + returnRename;
+	
 };

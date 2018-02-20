@@ -1,4 +1,4 @@
-exports.runningExe = function(fileName,file, returnCompile)
+exports.runningExe = function(fileName,file)
 {
   var fs = require('fs');
   var path1 = fileName;
@@ -39,5 +39,5 @@ exports.runningExe = function(fileName,file, returnCompile)
 
     });
 
-    return 0+returnCompile;
+    
 };

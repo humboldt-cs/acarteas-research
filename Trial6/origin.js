@@ -8,6 +8,8 @@
   var formidable = require('formidable');
   var fs = require('fs');
   const decompress = require('decompress');
+  var events = require('events');
+  var eventEmitter = new events.EventEmitter();
 
   //modules we've written
   var compile = require('./compile-module');
@@ -32,20 +34,74 @@
 
 
          //save the temp file into our sourcecode location.
-         var oldpath = files.filetoupload.path;
+        var oldpath = files.filetoupload.path;
 
 
-         var returnRename = renameFile.renameFunction(file, oldpath);
+
+        var eventhandle = function rename(){
+            renameFile.renameFunction(file, oldpath);
+            console.log('step 1');
+            eventEmitter.emit('step_1');
+
+        };
+
+        var decomevent = function decom(){
+            decompressFile.decompressFunction(file);
+            console.log('step 2');
+            eventEmitter.emit('step_2');
+        };
+
+        var compEvent = function compile(){
+            compile.compileFunction(fileName,file);
+            console.log('step 3');
+            eventEmitter.emit('step_3');
+        };  
+
+
+        var runEvent = function runMain(){
+            runFile.runningExe(fileName,file);
+            console.log('step 4');
+            eventEmitter.emit('step_4');
+        };
+
+
+        eventEmitter.on('even_1',eventhandle);
 
         //we must extract the zip here
         //TODO:  BROKEN HERE.  PLEASE FIX CALLBACK ON FOLLOWING LINE
-          var returnDecompress = decompressFile.decompressFunction(file, returnRename);
+        eventEmitter.on('step_1',function(){
+            decompressFile.decompressFunction(file);
+            console.log('worked');
+        });
+
+        eventEmitter.emit('even_1');
+
+        eventEmitter.on('even_2',)        
+
+        eventEmitter.on('step_2',function(){
+            compile.compileFunction(fileName,file);
+            console.log('worked');
+        });
+
+        eventEmitter.on('step_3',function(){
+            decompressFile.decompressFunction(file);
+            console.log('worked');
+        });
+
+        eventEmitter.on('step_4',function(){
+            decompressFile.decompressFunction(file);
+            console.log('worked');
+        });
+
+
+
+        eventEmitter.emit('even_1');
 
 	      //calling our compile module here
-	      var returnCompile = compile.compileFunction(fileName,file, returnDecompress);
+	      compile.compileFunction(fileName,file);
 
 	      //running the main.exe
-	      var returnRunning = runFile.runningExe(fileName,file, returnCompile);
+	      runFile.runningExe(fileName,file);
 
         /* this is for moving the file, which we are not doinng.
         //rename and move the file

@@ -1,7 +1,8 @@
 exports.renameFunction =  function(files, oldpath )
 {
-		
+ 
 	var fs = require('fs');
+
 
 		//choose the path for the files on the server here:
 		//relative paths
@@ -13,5 +14,5 @@ exports.renameFunction =  function(files, oldpath )
 	    });
 
 
-	return 0;
+
 };
