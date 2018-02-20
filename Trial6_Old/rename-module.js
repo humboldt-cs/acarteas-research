@@ -1,4 +1,4 @@
-exports.renameFunction =  function(files, oldpath )
+exports.renameFunction =  function(files,oldpath,fileName,file,callback )
 {
  
 	var fs = require('fs');
@@ -8,10 +8,15 @@ exports.renameFunction =  function(files, oldpath )
 		//relative paths
 		      	
 	    var newpath = './' + files;
+
 	    fs.rename(oldpath, newpath, function (err) {
 	        if (err) throw err;
 	    	console.log('step 1: temp zip File uploaded and moved!');
+	    	
 	    });
+
+		callback(fileName);
+	    //call back to decompress
 
 
 

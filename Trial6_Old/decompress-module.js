@@ -1,4 +1,4 @@
-exports.decompressFunction =  function(fileName, callback )
+exports.decompressFunction =  function(fileName,callback)
 {
 
 	//unzips the source file
@@ -7,8 +7,9 @@ exports.decompressFunction =  function(fileName, callback )
 	decompress(fileName, './').then(files => {
 		//callback(fileName);
 	    console.log('done!');
+	    
 
 	});
-
-	return 0;
+	callback(fileName,file);
+	
 };
