@@ -1,0 +1,18 @@
+eventually we will need an interface; a function that populates our dropdown menu.
+
+
+it would be good to have this information as a database entry.  
+
+for now we can simulate this for adam with pa1, pa2.  
+
+
+
+
+
+
+
+eventually we will want to run within a virtual machine.
+
+
+stress test; dual submit.
+
