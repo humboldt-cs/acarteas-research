@@ -31,84 +31,74 @@
          //grab the file name of *.zip 
          file = files.filetoupload.name;
          
-
-
          //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
 
-
-
+        //four events we'd like to run synchronously with eventEmitters
         var eventhandle = function rename(){
-            renameFile.renameFunction(file, oldpath);
-            console.log('step 1');
-            eventEmitter.emit('step_1');
-
+            console.log('step A');
+            eventEmitter.emit('step_A');
         };
 
         var decomevent = function decom(){
-            decompressFile.decompressFunction(file);
-            console.log('step 2');
-            eventEmitter.emit('step_2');
+            console.log('step B');
+            eventEmitter.emit('step_B');
         };
 
         var compEvent = function compile(){
-            compile.compileFunction(fileName,file);
-            console.log('step 3');
-            eventEmitter.emit('step_3');
+            console.log('step C');
+            eventEmitter.emit('step_C');
         };  
 
-
         var runEvent = function runMain(){
-            runFile.runningExe(fileName,file);
-            console.log('step 4');
-            eventEmitter.emit('step_4');
+            console.log('step D');
+            eventEmitter.emit('step_D');
         };
 
+        //these are the objects which should be synchonronous within scope
+        eventEmitter.on('step_A',function(){
+            //calling our rename module
+            renameFile.renameFunction(file, oldpath);
+            console.log('worked');
+        });  
 
-        eventEmitter.on('even_1',eventhandle);
-
-        //we must extract the zip here
-        //TODO:  BROKEN HERE.  PLEASE FIX CALLBACK ON FOLLOWING LINE
-        eventEmitter.on('step_1',function(){
+        eventEmitter.on('step_B',function(){
+            //calling our decompress module
             decompressFile.decompressFunction(file);
             console.log('worked');
         });
 
-        eventEmitter.emit('even_1');
-
-        eventEmitter.on('even_2',)        
-
-        eventEmitter.on('step_2',function(){
+        eventEmitter.on('step_C',function(){
+            //calling our compile module here
             compile.compileFunction(fileName,file);
             console.log('worked');
         });
 
-        eventEmitter.on('step_3',function(){
-            decompressFile.decompressFunction(file);
+        eventEmitter.on('step_D',function(){
+            //running the main.exe
+            runFile.runningExe(fileName,file);
             console.log('worked');
         });
 
-        eventEmitter.on('step_4',function(){
-            decompressFile.decompressFunction(file);
-            console.log('worked');
-        });
-
-
-
+        //these events will fire those above
+        eventEmitter.on('even_1',eventhandle);
+        eventEmitter.on('even_2',decomevent);
+        eventEmitter.on('even_3',compEvent);
+        eventEmitter.on('even_4',runEvent);
+        //fired
         eventEmitter.emit('even_1');
+        eventEmitter.emit('even_2');  
+        eventEmitter.emit('even_3');  
+        eventEmitter.emit('even_4');   
 
-	      //calling our compile module here
-	      compile.compileFunction(fileName,file);
 
-	      //running the main.exe
-	      runFile.runningExe(fileName,file);
 
         /* this is for moving the file, which we are not doinng.
         //rename and move the file
-        fs.rename(oldpath, newpath, function (err) {
+          fs.rename(oldpath, newpath, function (err) {
           if (err) throw err;
           res.write('File uploaded and moved!');
-		*/ //for moving the file
+		    */ //for moving the file
       
           return res.end();
       //});  for moving the file
