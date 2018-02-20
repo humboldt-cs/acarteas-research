@@ -116,7 +116,7 @@
           //running the main.exe
           runFile.runningExe(fileName,file);
           console.log("fourth");
-          callback();
+          
         };
 
 
