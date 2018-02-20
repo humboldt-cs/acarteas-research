@@ -103,3 +103,10 @@ will need the callbacks.
 
 #2.20.18
 
+worked with callbacks and built several structures to handle them.  Currently, they still lack firing in order. 
+
+next to do: figure out how promises work.  then make a promise factory and maybe modularize it.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+
+promisejs.org
