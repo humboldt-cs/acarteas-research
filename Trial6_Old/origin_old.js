@@ -13,6 +13,7 @@
   var compile = require('./compile-module');
   var runFile = require('./run-module');
   var decompressFile = require('./decompress-module');
+  var renameFile = require('./rename-module');
   
   //path variable for our executable files
   var fileName = './main.exe';
@@ -30,10 +31,13 @@
          
         //we must extract the zip here
         //TODO:  BROKEN HERE.  PLEASE FIX CALLBACK ON FOLLOWING LINE
-          var returns = decompressFile.decompressFunction(file, decompressFile.decompressFunction);
+          //var returns = decompressFile.decompressFunction(file, decompressFile.decompressFunction);
+          var oldpath = files.filetoupload.path;
+
+        renameFile.renameFunction(files,oldpath,decompressFile.decompressFunction(compile.compileFunction(runFile.runningExe)));
 
 	      //calling our compile module here
-	      compile.compileFunction(fileName,file, runFile.runningExe );
+	      //compile.compileFunction(fileName,file, runFile.runningExe );
 
         /* this is for moving the file, which we are not doinng.
         //rename and move the file
