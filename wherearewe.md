@@ -87,5 +87,7 @@ in callhell.  blocking options do not help.
 
 remove dependency chain, add events to fire functions.
 
-following research link.
+following research link:
+https://www.tutorialspoint.com/nodejs/nodejs_event_loop.htm
+
 
