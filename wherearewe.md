@@ -91,3 +91,12 @@ following research link:
 https://www.tutorialspoint.com/nodejs/nodejs_event_loop.htm
 
 
+
+
+#2.19.18
+
+used and learned event emitters for synchonronus firing.  unfortuantely, its front end; they FIRE in order.  we are NOT waiting for FINISH before the next executes.
+
+Lesson learned.  
+
+will need the callbacks.
