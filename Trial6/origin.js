@@ -86,11 +86,41 @@
         eventEmitter.on('even_3',compEvent);
         eventEmitter.on('even_4',runEvent);
         //fired
-        eventEmitter.emit('even_1');
-        eventEmitter.emit('even_2');  
-        eventEmitter.emit('even_3');  
-        eventEmitter.emit('even_4');   
+        //eventEmitter.emit('even_1');
+        //eventEmitter.emit('even_2');  
+        //eventEmitter.emit('even_3');  
+        //eventEmitter.emit('even_4');   
 
+        let first = function(callback){
+          //calling our rename module
+          renameFile.renameFunction(file, oldpath);
+          console.log('first');
+          callback();
+        }; 
+        
+        let second = function(callback) {
+          //calling our decompress module
+          decompressFile.decompressFunction(file);
+          console.log("second");
+          callback();
+        };
+        
+        let third = function(callback) {
+          //calling our compile module here
+          compile.compileFunction(fileName,file);
+          console.log("third");
+          callback();
+        };
+
+        let fourth = function(callback) {
+          //running the main.exe
+          runFile.runningExe(fileName,file);
+          console.log("fourth");
+          callback();
+        };
+
+
+        first(second(third(fourth)));
 
 
         /* this is for moving the file, which we are not doinng.

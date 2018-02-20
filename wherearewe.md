@@ -100,3 +100,6 @@ used and learned event emitters for synchonronus firing.  unfortuantely, its fro
 Lesson learned.  
 
 will need the callbacks.
+
+#2.20.18
+
