@@ -110,3 +110,9 @@ next to do: figure out how promises work.  then make a promise factory and maybe
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
 
 promisejs.org
+
+#2.22.18
+Figured out the problem with our asyn issue. Some functions parameters were being passed and exicuting before they were intended. 
+
+
+

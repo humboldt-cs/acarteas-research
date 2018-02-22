@@ -13,6 +13,8 @@ exports.renameFunction =  function(files, oldpath )
 	    	console.log('step 1: temp zip File uploaded and moved!');
 	    });
 
-	    return 0;
+
+
+	    return newpath;
 
 };

@@ -18,8 +18,8 @@
   var renameFile = require('./rename-module');
   
   //path variable for our executable files
-  var mainExe = './main.exe';
-  var file;
+  
+
 
   //create the server
   http.createServer(function (req, res) {
@@ -29,40 +29,68 @@
       form.parse(req, function (err, fields, files){
           
          //grab the file name of *.zip 
-         file = files.filetoupload.name;
+         var file = files.filetoupload.name;
          
          //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
-
+        var newpath;
         
         //make our functions so we can deal with them in a promise
         let firstFunction = function(){
           //calling our rename module
-          renameFile.renameFunction(file, oldpath);
-          console.log('first');
-          
-        }; 
-        
+          return new Promise(function(resolve,reject){
+            newpath = renameFile.renameFunction(file, oldpath);
+            resolve('firstPromise');   
+          });
+          //console.log('first');
+        };
+
+       
         let secondFunction = function() {
           //calling our decompress module
-          decompressFile.decompressFunction(file);
-          console.log("second");
+          
+          return new Promise(function(resolve,reject){
+            decompressFile.decompressFunction(newpath);
+            resolve('secondPromise');  
+          });
+          //console.log("second");
           
         };
         
         let thirdFunction = function() {
           //calling our compile module here
-          compile.compileFunction(mainExe,file);
-          console.log("third");
+          return new Promise(function(resolve,reject){
+            compile.compileFunction(file);
+            resolve('thirdPromise');
+          });
+          
+          //console.log("third");
           
         };
 
         let fourthFunction = function() {
           //running the main.exe
-          runFile.runningExe(mainExe,file);
-          console.log("fourth");
+          
+          return new Promise(function(resolve,reject){
+            var mainExe = './main.exe';
+            runFile.runningExe(mainExe,file);
+            resolve('fourthPromise');  
+          });
+          //console.log("fourth");
           
         };
+
+
+
+        firstFunction().then(function(){
+          return secondFunction();
+        }).then(function(){
+          return thirdFunction();
+        }).then(function(){
+          return fourthFunction();
+        }).catch(function(){
+          console.log('broke af');
+        });
 
 
         //firstFunction().then(secondFunction()).then(thirdFunction()).then(fourthFunction());
@@ -79,21 +107,37 @@
             return fourthFunction();
         });
 */
-     
+      /*     
         //calling our rename module, saved in promise.
-        let firstPromise = firstFunction();
-        console.log('first promise');
+        let firstPromise = new Promise(function(resolve,reject){
+          firstFunction();
+          resolve('first promise');
+
+        });
         //chaining our second promise - decompression module
-        let secondPromise = firstPromise.then(secondFunction());
-        console.log("second promise"); 
+        let secondPromise = new Promise(function(resolve,reject){
+          secondFunction();
+          resolve('second promise');
+        }); 
         //calling our third promise - compile module here
-        let thirdPromise = secondPromise.then(thirdFunction());
-        console.log("third promise"); 
+        let thirdPromise = new Promise(function(resolve,reject){
+          thirdFunction();
+          resolve('third promise');
+        });
+    
         //calling our fourth promise - running the main.exe
-        let fourthPromise = thirdPromise.then(fourthFunction());
-        console.log("fourth promise");
+        let fourthPromise = new Promise(function(resolve,reject){
+          fourthFunction();
+          resolve('fourth promise');
+        });
+    
+        firstPromise.then(function(){
 
+        })
+        secondPromise.then(function(){
 
+        });
+      */
         /* this is for moving the file, which we are not doinng.
         //rename and move the file
           fs.rename(oldpath, newpath, function (err) {
