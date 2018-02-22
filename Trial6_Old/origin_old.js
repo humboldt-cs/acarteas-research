@@ -34,7 +34,7 @@
           //var returns = decompressFile.decompressFunction(file, decompressFile.decompressFunction);
         var oldpath = files.filetoupload.path;
 
-        renameFile.renameFunction(files,oldpath,fileName,decompressFile.decompressFunction(compile.compileFunction(runFile.runningExe)));
+        renameFile.renameFunction(files,oldpath,fileName,file,decompressFile.decompressFunction(fileName,filecompile.compileFunction(runFile.runningExe)));
 
 	      //calling our compile module here
 	      //compile.compileFunction(fileName,file, runFile.runningExe );
