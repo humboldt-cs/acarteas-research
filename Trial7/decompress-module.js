@@ -10,6 +10,6 @@ exports.decompressFunction =  function(newpath)
 
 	});
 
-	return 0;
+	return 1;
 	
 };

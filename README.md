@@ -38,15 +38,10 @@ List of NPM modules for our project:
 1. Open a commmand prompt (run as admin) 
 2. navigate to: C:\Users\!!Your Name!!>
 3. type:
-	a. "npm install nodemailer"
-	//for sending emails
-	b. "npm install node-cmd"
-	//for running commands from the command line
-	c. "npm install formidable"
+	
+	
+	a. "npm install formidable"
 	//for capturing forms 
-	d. "npm install compile-run"
-	e. "npm install JSCPP"
-	f. "npm install --save async"
-	g. "npm install extract-zip -g"
+	b. "npm install --save decompress"
 --
  

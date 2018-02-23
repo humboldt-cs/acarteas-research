@@ -47,10 +47,6 @@ exports.compileFunction = function(file)
 	    //callback(fileName,file);
 		
 
-		//synchoronous delete of batch
-		fs.unlinkSync('./' + 'compile.bat');
-		console.log('step five: compile.bat deleted');
-
 	  });
 	}
 

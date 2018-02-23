@@ -8,19 +8,20 @@
   var formidable = require('formidable');
   var fs = require('fs');
   const decompress = require('decompress');
-  var events = require('events');
-  var eventEmitter = new events.EventEmitter();
+  //var events = require('events');
+  //var eventEmitter = new events.EventEmitter();
 
   //modules we've written
   var compile = require('./compile-module');
   var runFile = require('./run-module');
   var decompressFile = require('./decompress-module');
   var renameFile = require('./rename-module');
-  
+  var deleteStuff = require('./delete-module');
+  //file,mainExe
+
+
   //path variable for our executable files
   
-
-
   //create the server
   http.createServer(function (req, res) {
     if (req.url == '/fileupload') {
@@ -33,22 +34,31 @@
          
          //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
-        var newpath;
         
+        
+        //list of return variables
+        var newpath; //f1
+        var returnSecondFunction;
+        var returnThirdFunction;
+        var returnFourthFunction;
+
+
         //make our functions so we can deal with them in a promise
         let firstFunction = function(){
           //calling our rename module
           return new Promise(function(resolve,reject){
-            newpath = renameFile.renameFunction(file, oldpath);
-            resolve('firstPromise');   
+            try{
+
+              newpath = renameFile.renameFunction(file, oldpath);
+              resolve('firstPromise');   
+            }
+            catch(e){};
           });
           //console.log('first');
         };
-
        
         let secondFunction = function() {
           //calling our decompress module
-          
           return new Promise(function(resolve,reject){
             decompressFile.decompressFunction(newpath);
             resolve('secondPromise');  
@@ -73,7 +83,7 @@
           
           return new Promise(function(resolve,reject){
             var mainExe = './main.exe';
-            runFile.runningExe(mainExe,file);
+            runFile.runningExe(mainExe);
             resolve('fourthPromise');  
           });
           //console.log("fourth");
@@ -81,6 +91,19 @@
         };
 
 
+        let fifthFunction = function() {
+          //running the main.exe
+          
+          return new Promise(function(resolve,reject){
+            var mainExe = './main.exe';
+            deleteStuff.deleteFunction(file,mainExe);
+            resolve('fourthPromise');  
+          });
+          //console.log("fourth");
+          
+        };
+
+        //deleteStuff
 
         firstFunction().then(function(){
           return secondFunction();
@@ -157,4 +180,6 @@
       res.write('</form>');
       return res.end();
     }
-  }).listen(80); //, '137.150.122.17'     
+  }).listen(8080); //, '137.150.122.17'    
+
+  //change to listen on (8080) for now 
