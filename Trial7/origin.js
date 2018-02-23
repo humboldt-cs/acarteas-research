@@ -17,10 +17,8 @@
   var decompressFile = require('./decompress-module');
   var renameFile = require('./rename-module');
   var deleteStuff = require('./delete-module');
-  //file,mainExe
 
-
-  //path variable for our executable files
+  //TODO: add path variable for our executable files
   
   //create the server
   http.createServer(function (req, res) {
@@ -28,139 +26,80 @@
       var form = new formidable.IncomingForm();
      
       form.parse(req, function (err, fields, files){
-          
-         //grab the file name of *.zip 
-         var file = files.filetoupload.name;
+
+        //grab the file name of *.zip 
+        var file = files.filetoupload.name;
          
-         //save the temp file into our sourcecode location.
+        //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
         
-        
         //list of return variables
-        var newpath; //f1
+        var returnFirstFunction; //f1
         var returnSecondFunction;
         var returnThirdFunction;
         var returnFourthFunction;
-
+        var returnfifthFunction;
 
         //make our functions so we can deal with them in a promise
         let firstFunction = function(){
-          //calling our rename module
+          //calling our rename
           return new Promise(function(resolve,reject){
-            try{
-
-              newpath = renameFile.renameFunction(file, oldpath);
+              returnFirstFunction = renameFile.renameFunction(file, oldpath);
               resolve('firstPromise');   
-            }
-            catch(e){};
           });
-          //console.log('first');
         };
        
         let secondFunction = function() {
-          //calling our decompress module
+          //calling our decompress
           return new Promise(function(resolve,reject){
-            decompressFile.decompressFunction(newpath);
+            returnSecondFunction = decompressFile.decompressFunction(returnFirstFunction);
             resolve('secondPromise');  
-          });
-          //console.log("second");
-          
+          });        
         };
         
         let thirdFunction = function() {
-          //calling our compile module here
+          //calling our compile
           return new Promise(function(resolve,reject){
-            compile.compileFunction(file);
+            returnThirdFunction = compile.compileFunction(file);
             resolve('thirdPromise');
-          });
-          
-          //console.log("third");
-          
+          });          
         };
 
         let fourthFunction = function() {
-          //running the main.exe
-          
+          //running the main.exe 
           return new Promise(function(resolve,reject){
-            var mainExe = './main.exe';
-            runFile.runningExe(mainExe);
+            returnFourthFunction = runFile.runningExe(returnThirdFunction);
             resolve('fourthPromise');  
-          });
-          //console.log("fourth");
-          
+          });         
         };
-
 
         let fifthFunction = function() {
-          //running the main.exe
-          
+          //deleting stuf
           return new Promise(function(resolve,reject){
             var mainExe = './main.exe';
-            deleteStuff.deleteFunction(file,mainExe);
-            resolve('fourthPromise');  
-          });
-          //console.log("fourth");
-          
+            returnfifthFunction = deleteStuff.deleteFunction(file,mainExe);
+            resolve('fifthPromise');  
+          });          
         };
 
-        //deleteStuff
+        //event emmiters to make sure we trigger everything in approp. order
 
+
+
+        //our promise chain, ensuring things finish in order.
         firstFunction().then(function(){
           return secondFunction();
         }).then(function(){
           return thirdFunction();
         }).then(function(){
           return fourthFunction();
+        }).then(function(){
+          return fifthFunction();
         }).catch(function(){
           console.log('broke af');
         });
 
 
-        //firstFunction().then(secondFunction()).then(thirdFunction()).then(fourthFunction());
-
-/*
-        firstFunction()
-          .then(function(){
-            return secondFunction();
-          })
-          .then (function(){
-            return thirdFunction();
-          })
-          .then (function(){
-            return fourthFunction();
-        });
-*/
-      /*     
-        //calling our rename module, saved in promise.
-        let firstPromise = new Promise(function(resolve,reject){
-          firstFunction();
-          resolve('first promise');
-
-        });
-        //chaining our second promise - decompression module
-        let secondPromise = new Promise(function(resolve,reject){
-          secondFunction();
-          resolve('second promise');
-        }); 
-        //calling our third promise - compile module here
-        let thirdPromise = new Promise(function(resolve,reject){
-          thirdFunction();
-          resolve('third promise');
-        });
-    
-        //calling our fourth promise - running the main.exe
-        let fourthPromise = new Promise(function(resolve,reject){
-          fourthFunction();
-          resolve('fourth promise');
-        });
-    
-        firstPromise.then(function(){
-
-        })
-        secondPromise.then(function(){
-
-        });
-      */
         /* this is for moving the file, which we are not doinng.
         //rename and move the file
           fs.rename(oldpath, newpath, function (err) {
@@ -180,6 +119,6 @@
       res.write('</form>');
       return res.end();
     }
-  }).listen(8080); //, '137.150.122.17'    
+  }).listen(80); //, '137.150.122.17'    
 
   //change to listen on (8080) for now 

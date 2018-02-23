@@ -45,7 +45,7 @@ exports.compileFunction = function(file)
 	  process.on('exit', function (code) {
 	    console.log("step four: compile-module is finished.");
 	    //callback(fileName,file);
-		
+		return ('./' + output_exe);
 
 	  });
 	}
@@ -85,6 +85,6 @@ exports.compileFunction = function(file)
 	runCmdHandler("./", 'compile.bat');
 	console.log('bat executed correctly.');
 
-	return 0;
+	return ('./' + output_exe);
 	
 };

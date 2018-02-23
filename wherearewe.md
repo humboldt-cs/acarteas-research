@@ -112,7 +112,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
 promisejs.org
 
 #2.22.18
-Figured out the problem with our asyn issue. Some functions parameters were being passed and exicuting before they were intended. 
+Figured out the problem with our asyn issue. Some functions parameters were being passed and exciuting before they were intended. 
 
+#2.23.18
 
+more promise issues.  current error we are receiving is the third step firing before everything else.  why is this the case?  Also cleaned up our code base, added and updated a new module to handle our delete calls seperately.  added delete module to promises.
 

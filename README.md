@@ -45,3 +45,5 @@ List of NPM modules for our project:
 	b. "npm install --save decompress"
 --
  
+##to stop the server; go to the tools page,  start ISS manager  
+##then select the server from the list on the left and hit stop
