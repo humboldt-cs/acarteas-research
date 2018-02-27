@@ -1,11 +1,12 @@
 exports.runningExe = function(mainExe)
 {
   var fs = require('fs');
+  //path1 './main.exe'
   var path1 = mainExe;
   var exec = require('child_process');
-        console.log(mainExe);
+  mainExe = './main.exe';
+    console.log('step 5' +' '+ mainExe);
       //console.log(file);  
-
   //var run = function()
   //{
     //console.log("fun() start");
@@ -13,7 +14,6 @@ exports.runningExe = function(mainExe)
     {
       //console.log(err);
       console.log("step six: output to txt file: " + data);
-      console.log(mainExe);
       //console.log(file);
       //save to output
 

@@ -6,10 +6,10 @@ exports.decompressFunction =  function(returnFirstFunction)
 	 
 	decompress(returnFirstFunction, './').then(files => {
 		//callback(fileName);
-	    console.log('step 2: unzipping source.cpp files complete!');
+	    console.log('step 4: unzipping source.cpp files complete!');
 
 	});
 
-	return returnFirstFunction;
+	return '*.cpp';
 	
 };

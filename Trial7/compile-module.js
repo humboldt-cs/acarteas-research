@@ -3,7 +3,7 @@ exports.compileFunction = function(file)
 	//dependencies
 	var fs = require('fs');
 	var spawn = require('child_process').spawn;
-
+	var output_exe = "main.exe";
 	//code: compile sourcecode, spawn and run batch file.
 	function spawnProcess(dir, cmd) {
 	  return (process.platform.toLowerCase().indexOf("win") >= 0) 
@@ -21,7 +21,7 @@ exports.compileFunction = function(file)
 	  return spawn(cmdParts[0], cmdParts.slice(1), { cwd: dir});
 	}
 
-	function runCmdHandler(dir, cmd) {
+	let rch = function runCmdHandler(dir, cmd) {
 	  var process = null;
 
 	  try {
@@ -39,15 +39,18 @@ exports.compileFunction = function(file)
 	  });
 
 	  process.stderr.on('data', function (data) {
+
 	    console.log("error", data.toString('utf-8'));
 	  });
 
-	  process.on('exit', function (code) {
-	    console.log("step four: compile-module is finished.");
-	    //callback(fileName,file);
-		return ('./' + output_exe);
 
+
+	  process.on('exit', function (code) {
+	    console.log("step 2: compile-module is finished.");
+	    //callback(fileName,file);
+		
 	  });
+		  
 	}
 
 	/*
@@ -60,7 +63,7 @@ exports.compileFunction = function(file)
 	//var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
 	//var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial5\""; //here we took a / off the end here!
 	
-	var output_exe = "main.exe"
+	
 	var exe_name = 'cl.exe';
 	 
 
@@ -77,14 +80,14 @@ exports.compileFunction = function(file)
 	
 	fs.appendFileSync('compile.bat',batComm3);
 
-	console.log('step three: compile.bat has been made');
+	console.log('step one: compile.bat has been made');
 	//
 
 	//var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
 
-	runCmdHandler("./", 'compile.bat');
+	rch("./", 'compile.bat');
 	console.log('bat executed correctly.');
 
-	return ('./' + output_exe);
+	//return ('./' + output_exe);
 	
 };
