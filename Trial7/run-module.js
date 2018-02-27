@@ -4,12 +4,13 @@ exports.runningExe = function(mainExe)
   //path1 './main.exe'
   var path1 = mainExe;
   var exec = require('child_process');
-  mainExe = './main.exe';
+  //mainExe = './main.exe';
     console.log('step 5' +' '+ mainExe);
       //console.log(file);  
   //var run = function()
   //{
     //console.log("fun() start");
+    path1 = ('./' + mainExe);
     exec.execFile(path1,function(err,data)
     {
       //console.log(err);

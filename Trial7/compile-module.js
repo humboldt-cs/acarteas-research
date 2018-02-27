@@ -88,6 +88,6 @@ exports.compileFunction = function(file)
 	rch("./", 'compile.bat');
 	console.log('bat executed correctly.');
 
-	//return ('./' + output_exe);
+	return output_exe;
 	
 };
