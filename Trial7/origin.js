@@ -70,6 +70,7 @@
         let fourthFunction = function() {
           //running the main.exe 
           return new Promise(function(resolve,reject){
+            console.log(returnFirstFunction);
             returnFourthFunction = runFile.runningExe(returnThirdFunction);
             resolve('fourthPromise');  
           });         

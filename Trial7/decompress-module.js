@@ -10,6 +10,6 @@ exports.decompressFunction =  function(returnFirstFunction)
 
 	});
 
-	return '*.cpp';
+	return 'main.exe';
 	
 };

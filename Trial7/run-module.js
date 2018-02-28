@@ -1,34 +1,44 @@
-exports.runningExe = function(mainExe)
+exports.runningExe = function(fileName,file)
 {
   var fs = require('fs');
-  //path1 './main.exe'
-  var path1 = mainExe;
+  var path1 = fileName;
   var exec = require('child_process');
-  mainExe = './main.exe';
-    console.log('step 5' +' '+ mainExe);
-      //console.log(file);  
+  
+
   //var run = function()
   //{
     //console.log("fun() start");
-    exec.execFileSync(path1,function(err,data)
+    exec.execFile(path1,[' < inputs.txt'],function(err,data)
     {
+      //main.exe < inputs
+
       //console.log(err);
-      console.log("step six: output to txt file: " + data);
-      //console.log(file);
+      console.log("output to txt file:" + data);
+      
       //save to output
 
       fs.writeFile('output.txt',data,function(err)
       {
         if (err) throw err;
-        console.log('step seven: run module complete - you did it!');
+        console.log('run module complete - you did it!');
         
-        
-        
-      });
 
+        // cleaning up files
+        //fs.unlinkSync('./' + fileName);
+        //console.log('Main.exe deleted');
+
+
+        //TODO: PUT THIS BACK IN WHEN WERE READY TO KILL THE ZIP!
+        //fs.unlinkSync('./' + file);
+        //console.log('Zip file deleted');
+        
+        var temp = file;
+        temp = temp.substring(0,temp.length - 3);
+        fs.unlinkSync('./' + temp + 'obj');
+        console.log('object deleted');
+      });
 
 
     });
 
-    return 0;
 };
