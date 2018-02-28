@@ -120,3 +120,36 @@ more promise issues.  current error we are receiving is the third step firing be
 
 #2.23.18
 Still having the same issue as before however we have an inkling. MOAR BLOCKING IN A  CHAINNNNNNNNN. Last resort modularize our compile module into two modules.
+
+#2.27.18
+mutex or semaphore
+have global variable = false
+spinlock
+
+while sleep
+y=2; 
+while (lock == false)
+{
+	sleep(500);
+
+}
+lock = false;
+y= 5;
+x(y){lock = true};
+
+
+-----------
+
+
+function go()
+{
+	if(lock == true)
+	{
+		lock = false;
+		//do work;
+	}
+	else
+	{
+		setTimeout(go,500);
+	}
+}

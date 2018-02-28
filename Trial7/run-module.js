@@ -10,7 +10,7 @@ exports.runningExe = function(mainExe)
   //var run = function()
   //{
     //console.log("fun() start");
-    exec.execFile(path1,function(err,data)
+    exec.execFileSync(path1,function(err,data)
     {
       //console.log(err);
       console.log("step six: output to txt file: " + data);

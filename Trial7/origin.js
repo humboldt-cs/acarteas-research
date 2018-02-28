@@ -95,10 +95,10 @@
           return thirdFunction();
         }).then(function(){
           return fourthFunction();
-        })/*.then(function(){
+        }).then(function(){
           return fifthFunction();
-        })*/.catch(function(){
-          console.log('broke af');
+        }).catch(function(){
+          console.log('promises are broke af');
         });
 
 

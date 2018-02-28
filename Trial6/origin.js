@@ -16,6 +16,7 @@
   var runFile = require('./run-module');
   var decompressFile = require('./decompress-module');
   var renameFile = require('./rename-module');
+  var deleteStuff = require('./delete-module');
   
   //path variable for our executable files
   var fileName = './main.exe';
@@ -55,6 +56,11 @@
             eventEmitter.emit('step_D');
         };
 
+        var delEvent = function delObj(){
+            console.log('step E');
+            eventEmitter.emit('step_E');
+        };
+
         //these are the objects which should be synchonronous within scope
         eventEmitter.on('step_A',function(){
             //calling our rename module
@@ -80,17 +86,19 @@
             console.log('worked');
         });
 
+        eventEmitter.on('step_E',function(){
+            //cleaning up file folder
+            deleteStuff.deleteFunction(file,fileName);
+            console.log('worked');
+        });
         //these events will fire those above
         eventEmitter.on('even_1',eventhandle);
         eventEmitter.on('even_2',decomevent);
         eventEmitter.on('even_3',compEvent);
         eventEmitter.on('even_4',runEvent);
-        //fired
-        //eventEmitter.emit('even_1');
-        //eventEmitter.emit('even_2');  
-        //eventEmitter.emit('even_3');  
-        //eventEmitter.emit('even_4');   
+        eventEmitter.on('even_5',delEvent);
 
+/*
         let first = function(callback){
           //calling our rename module
           renameFile.renameFunction(file, oldpath);
@@ -119,8 +127,61 @@
           
         };
 
+*/
 
-        first(second(third(fourth)));
+        //make our functions so we can deal with them in a promise
+        let firstPromise = function(){
+          return new Promise(function(resolve,reject){
+              eventEmitter.emit('even_1');
+              resolve('firstPromise');   
+          });
+        };
+       
+        let secondPromise = function() {
+          return new Promise(function(resolve,reject){
+            eventEmitter.emit('even_2');
+            resolve('secondPromise');  
+          });        
+        };
+        
+        let thirdPromise = function() {
+          return new Promise(function(resolve,reject){
+            eventEmitter.emit('even_3');
+            resolve('thirdPromise');
+          });          
+        };
+
+        let fourthPromise = function() {
+          return new Promise(function(resolve,reject){
+            eventEmitter.emit('even_4'); 
+            resolve('fourthPromise');  
+          });         
+        };
+
+        let fifthPromise = function() {
+          return new Promise(function(resolve,reject){
+            eventEmitter.emit('even_5');
+            resolve('fifthPromise');  
+          });          
+        };
+
+        //event emmiters to make sure we trigger everything in approp. order
+
+
+
+        //our promise chain, ensuring things finish in order.
+        firstPromise().then(function(){
+          return secondPromise();
+        }).then(function(){
+          return thirdPromise();
+        }).then(function(){
+          return fourthPromise();
+        }).then(function(){
+          return fifthPromise();
+        }).catch(function(){
+          console.log('promises are broke af');
+        });
+     
 
 
         /* this is for moving the file, which we are not doinng.
