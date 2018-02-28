@@ -1,0 +1,37 @@
+port 80 posts it to the internet.
+
+write to a file
+write to a file.bat
+
+
+//create random file name for this instance
+
+//install the SDK
+
+
+string inject the path
+
+
+both custom inputs from the student, or written inputs to test against in a txt file
+
+command line pipe process:
+
+c:\ helloword.exe < input.txt
+
+
+
+priority 3: provide inputs,  expected outputs.
+
+highlight red when its different.
+
+
+
+
+eventually run in an external server like IIS instead of a console.
+
+farther down the road we may want to run it inside a docker; open.
+install docker part on the bare metal, and then run the VM inside the VM.
+
+
+
+
