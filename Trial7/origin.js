@@ -44,7 +44,8 @@
         let firstFunction = function(){
           //calling our rename
           return new Promise(function(resolve,reject){
-              returnFirstFunction = renameFile.renameFunction(file, oldpath);
+              returnFirstFunction = compile.compileFunction(file);
+              
               resolve('firstPromise');   
           });
         };
@@ -52,7 +53,8 @@
         let secondFunction = function() {
           //calling our decompress
           return new Promise(function(resolve,reject){
-            returnSecondFunction = decompressFile.decompressFunction(returnFirstFunction);
+            returnSecondFunction = renameFile.renameFunction(file, oldpath);
+            
             resolve('secondPromise');  
           });        
         };
@@ -60,7 +62,7 @@
         let thirdFunction = function() {
           //calling our compile
           return new Promise(function(resolve,reject){
-            returnThirdFunction = compile.compileFunction(file);
+            returnThirdFunction = decompressFile.decompressFunction(returnSecondFunction);
             resolve('thirdPromise');
           });          
         };
@@ -68,6 +70,7 @@
         let fourthFunction = function() {
           //running the main.exe 
           return new Promise(function(resolve,reject){
+            console.log(returnFirstFunction);
             returnFourthFunction = runFile.runningExe(returnThirdFunction);
             resolve('fourthPromise');  
           });         
@@ -76,7 +79,7 @@
         let fifthFunction = function() {
           //deleting stuf
           return new Promise(function(resolve,reject){
-            var mainExe = './main.exe';
+            //var mainExe = './main.exe';
             returnfifthFunction = deleteStuff.deleteFunction(file,mainExe);
             resolve('fifthPromise');  
           });          
@@ -93,9 +96,9 @@
           return thirdFunction();
         }).then(function(){
           return fourthFunction();
-        }).then(function(){
+        })/*.then(function(){
           return fifthFunction();
-        }).catch(function(){
+        })*/.catch(function(){
           console.log('broke af');
         });
 

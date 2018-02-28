@@ -118,3 +118,5 @@ Figured out the problem with our asyn issue. Some functions parameters were bein
 
 more promise issues.  current error we are receiving is the third step firing before everything else.  why is this the case?  Also cleaned up our code base, added and updated a new module to handle our delete calls seperately.  added delete module to promises.
 
+#2.23.18
+Still having the same issue as before however we have an inkling. MOAR BLOCKING IN A  CHAINNNNNNNNN. Last resort modularize our compile module into two modules.
