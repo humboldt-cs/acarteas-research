@@ -35,7 +35,7 @@ exports.compileFunction = function(file)
 	  }
 
 	  process.stdout.on('data', function (data) {
-	    console.log("progress", data.toString('utf-8'));
+	    console.log("data in compile module", data.toString('utf-8'));
 	  });
 
 	  process.stderr.on('data', function (data) {
