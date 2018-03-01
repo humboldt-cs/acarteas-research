@@ -153,3 +153,9 @@ function go()
 		setTimeout(go,500);
 	}
 }
+
+#3.1.18
+
+async call to exec is running out of order ; regardless of our spinlocks.  trying for execFileSync()
+
+from here: https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback
