@@ -3,6 +3,9 @@
 //program will take .zip files and create output from source.cpp files.
 //will compare against given input in 'input.txt'.  
 
+  //sub folder where our current version is.
+  var subfolder = 'Trial8';
+
   //npms
   var http = require('http');
   var formidable = require('formidable');
@@ -33,9 +36,6 @@
 
         //grab the file name of *.zip 
         var file = files.filetoupload.name;
-
-        //name of our main.exe
-        var mainExe = './main.exe';
          
         //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
@@ -53,13 +53,12 @@
           if (lock1 == true)
           {
             lock1 = false;
-            compile.compileFunction(file);
+            returnSecondFunction = renameFile.renameFunction(file, oldpath);
             lock2=true;
-            
           }
           else
           {
-            setTimeout(go2,500);    
+            setTimeout(go2,50);    
           }
         };
 
@@ -68,12 +67,12 @@
       		if (lock2 == true)
       		{
            	lock2 = false;
-           	returnSecondFunction = renameFile.renameFunction(file, oldpath);
+           	decompressFile.decompressFunction(returnSecondFunction);
             lock3=true;
       		}
       		else
       		{
-      			setTimeout(go2,500);
+      			setTimeout(go2,50);
       		}
       	};
 
@@ -82,13 +81,12 @@
       		if (lock3 == true)
       		{
            	lock3 = false;
-  			    returnThirdFunction = decompressFile.decompressFunction(returnSecondFunction);
+            compile.compileFunction(file, subfolder);
             lock4 = true;
       		}
       		else
       		{
-      			setTimeout(go3,500);
-            lock3 = true;
+      			setTimeout(go3,50);
       		}
       	};
     
@@ -97,12 +95,12 @@
       		if (lock4 == true)
       		{
            	lock4 = false;
-           	runFile.runningExe(returnThirdFunction);
+           	runFile.runningExe('./main.exe');
             lock5 = true;
       		}
       		else
       		{
-      			setTimeout(go4,500);
+      			setTimeout(go4,50);
       		}
       	};
 
@@ -111,11 +109,11 @@
       		if (lock5 == true)
       		{
            	lock5 = false;
-           	returnfifthFunction = deleteStuff.deleteFunction(file,mainExe);
+           	returnfifthFunction = deleteStuff.deleteFunction(file,'./main.exe');
       		}
       		else
       		{
-      			setTimeout(go5,500);
+      			setTimeout(go5,50);
       		}
       	};
 

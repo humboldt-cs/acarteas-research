@@ -1,5 +1,6 @@
-exports.compileFunction = function(file)
+exports.compileFunction = function(file, subfolder)
 {
+
 	//dependencies
 	var fs = require('fs');
 	var spawn = require('child_process').spawn;
@@ -35,7 +36,7 @@ exports.compileFunction = function(file)
 	  }
 
 	  process.stdout.on('data', function (data) {
-	    console.log("data in compile module", data.toString('utf-8'));
+	    console.log("data in compile module -- processing", data.toString('utf-8'));
 	  });
 
 	  process.stderr.on('data', function (data) {
@@ -46,7 +47,7 @@ exports.compileFunction = function(file)
 
 
 	  process.on('exit', function (code) {
-	    console.log("step 2: compile-module is finished.");
+	    //console.log("step 2: compile-module is finished.");
 	    //callback(fileName,file);
 		
 	  });
@@ -69,7 +70,7 @@ exports.compileFunction = function(file)
 
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
-	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial7\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\'+ subfolder +'\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
 
@@ -80,13 +81,11 @@ exports.compileFunction = function(file)
 	
 	fs.appendFileSync('compile.bat',batComm3);
 
-	console.log('step one: compile.bat has been made');
-	//
-
 	//var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
 
 	rch("./", 'compile.bat');
-	console.log('bat executed correctly.');
+
+	console.log('step 3: compile.bat has been made');
 
 	return output_exe;
 	

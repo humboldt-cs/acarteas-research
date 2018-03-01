@@ -8,7 +8,7 @@ exports.renameFunction =  function(files, oldpath )
 
     fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
-    	console.log('step 3: temp zip File uploaded and moved!');
+    	console.log('step 1: temp zip File acquired and named.');
     });
 
     return newpath;
