@@ -13,13 +13,13 @@ exports.compileFunction = function(file, subfolder)
 	}
 
 	function spawnWindowsProcess(dir, cmd) {
-	  return spawn("cmd.exe", ["/c", cmd], {cwd: dir});
+	  return spawnSync("cmd.exe", ["/c", cmd], {cwd: dir});
 	}
 
 	function spawnLinuxProcess(dir, cmd) {
 	  var cmdParts = cmd.split(/\s+/);
 
-	  return spawn(cmdParts[0], cmdParts.slice(1), { cwd: dir});
+	  return spawnSync(cmdParts[0], cmdParts.slice(1), { cwd: dir});
 	}
 
 	let rch = function runCmdHandler(dir, cmd) {
