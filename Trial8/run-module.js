@@ -9,7 +9,7 @@ exports.runningExe = function(fileName,file)
   //{
     //console.log("fun() start");
     //TODO:  IT IS BREAKING HERE ON RIGHT HERE< PLEASE LOOK HERE TODO
-    execFileSync.execFileSync(path1,[],function(err,data)
+    execFileSync.execFileSync(path1,[''],function(err,data)
     {
       //main.exe < inputs
 

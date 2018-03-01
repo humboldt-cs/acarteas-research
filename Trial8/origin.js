@@ -52,9 +52,9 @@
         {
           if (lock1 == true)
           {
-            lock1 = false;
-            returnSecondFunction = renameFile.renameFunction(file, oldpath);
-            lock2=true;
+			lock1 = false;
+	        returnSecondFunction = renameFile.renameFunction(file, oldpath);
+	        lock2=true;
           }
           else
           {
@@ -64,11 +64,11 @@
 
         function go2()
       	{
-      		if (lock2 == true)
+			if (lock2 == true)
       		{
-           	lock2 = false;
-           	decompressFile.decompressFunction(returnSecondFunction);
-            lock3=true;
+	           	lock2 = false;
+	           	decompressFile.decompressFunction(returnSecondFunction);
+	            lock3=true;
       		}
       		else
       		{
@@ -80,9 +80,9 @@
       	{
       		if (lock3 == true)
       		{
-           	lock3 = false;
-            compile.compileFunction(file, subfolder);
-            lock4 = true;
+	           	lock3 = false;
+	            compile.compileFunction(file, subfolder);
+	            lock4 = true;
       		}
       		else
       		{
@@ -94,9 +94,9 @@
       	{
       		if (lock4 == true)
       		{
-           	lock4 = false;
-           	runFile.runningExe('./main.exe');
-            lock5 = true;
+	           	lock4 = false;
+	           	runFile.runningExe('./main.exe');
+	            lock5 = true;
       		}
       		else
       		{
@@ -108,8 +108,8 @@
       	{
       		if (lock5 == true)
       		{
-           	lock5 = false;
-           	returnfifthFunction = deleteStuff.deleteFunction(file,'./main.exe');
+	           	lock5 = false;
+	           	returnfifthFunction = deleteStuff.deleteFunction(file,'./main.exe');
       		}
       		else
       		{
@@ -146,4 +146,5 @@
     }
   }).listen(80); //, '137.150.122.17'    
 
-  //change to listen on (8080) for now 
+  //change to listen on (8080) for localhost
+  //change to listen on (80) at 'www.lumberhacks.org:80'

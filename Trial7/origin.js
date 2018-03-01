@@ -183,4 +183,5 @@
     }
   }).listen(80); //, '137.150.122.17'    
 
-  //change to listen on (8080) for now 
+  //change to listen on (8080) for localhost
+  //change to listen on (80) at 'www.lumberhacks.org:80'
