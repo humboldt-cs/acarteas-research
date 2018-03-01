@@ -1,4 +1,4 @@
-exports.renameFunction =  function(files, oldpath )
+exports.renameFunction =  function(files, oldpath, callback)
 {
  
 	var fs = require('fs');
@@ -8,7 +8,8 @@ exports.renameFunction =  function(files, oldpath )
 
     fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
-    	console.log('step 1: temp zip File acquired and named.');
+        console.log('step 1: temp zip File acquired and named.');
+        callback();
     });
 
     return newpath;
