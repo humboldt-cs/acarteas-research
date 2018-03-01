@@ -44,20 +44,29 @@
         var returnfifthFunction;
 
         //make our functions so we can deal with them in a promise
-        let firstFunction = function(){
+
           //calling our rename
-          return new Promise(function(resolve,reject){
-              returnFirstFunction = compile.compileFunction(file);
-              lock2 = true;  
-              resolve('firstPromise');   
-          });
-        };
-        console.log('lock2 should be true' + " " + lock2);
-       
-        let secondFunction = function() {
-          //calling our decompress
-          return new Promise(function(resolve,reject){
-            console.log('made it to go2');
+              function go1()
+              {
+                if (lock1 == true)
+                {
+                      lock1 = false;
+                      //returnFirstFunction = 
+                      compile.compileFunction(file);
+                      //break;
+                      lock2=true;
+                }
+                else
+                {
+                  setTimeout(go2,500);
+                }
+              };
+
+ 
+          
+
+        console.log('lock2 should be true' + "" + lock2);
+      
             function go2()
             	{
             		if (lock2 == true)
@@ -71,21 +80,14 @@
             		{
             			setTimeout(go2,500);
             		}
-            	}
-            resolve('secondPromise');  
-          });        
-        };
-        
-        let thirdFunction = function() {
-          //calling our compile
-          return new Promise(function(resolve,reject){
-            console.log('made it to go3');
+            	};
+
             function go3()
             	{
             		if (lock3 == true)
             		{
                      	lock3 = false;
-            			returnThirdFunction = decompressFile.decompressFunction(returnSecondFunction);         	
+            			    returnThirdFunction = decompressFile.decompressFunction(returnSecondFunction);         	
                      	//break;
                      	lock4 = true;
             		}
@@ -93,17 +95,8 @@
             		{
             			setTimeout(go3,500);
             		}
-            	}
-            lock = true;
-            resolve('thirdPromise');
-          });          
-        };
-        
-        let fourthFunction = function() {
-          //running the main.exe 
-          return new Promise(function(resolve,reject){
-            console.log('made it to go4');
-            //while (lock == false){
+            	};
+          
             	function go4()
             	{
             		if (lock4 == true)
@@ -119,14 +112,9 @@
             		}
             	}
             //};
-                        resolve('fourthPromise');  
-          });         
-        };
 
-        let fifthFunction = function() {
-          //deleting stuf
-          return new Promise(function(resolve,reject){
-            //var mainExe = './main.exe';
+
+           //var mainExe = './main.exe';
             function go5()
             	{
             		if (lock5 == true)
@@ -140,26 +128,18 @@
             			setTimeout(go5,500);
             		}
             	}
-            resolve('fifthPromise');  
-          });          
-        };
+              lock1 = true;
+              go1();
+              go2();
+              go3();
+              go4();
+              go5();
 
         //event emmiters to make sure we trigger everything in approp. order
 
 
 
-        //our promise chain, ensuring things finish in order.
-        firstFunction().then(function(){
-          return secondFunction();
-        }).then(function(){
-          return thirdFunction();
-        }).then(function(){
-          return fourthFunction();
-        }).then(function(){
-          return fifthFunction();
-        }).catch(function(){
-          console.log('promises are broke af');
-        });
+        //our promise chain, ensuring things finish in order
 
 
         /* this is for moving the file, which we are not doinng.

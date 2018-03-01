@@ -69,7 +69,7 @@ exports.compileFunction = function(file)
 
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
-	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial8\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\Trial7\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
 
@@ -88,6 +88,6 @@ exports.compileFunction = function(file)
 	rch("./", 'compile.bat');
 	console.log('bat executed correctly.');
 
-	//return ('./' + output_exe);
+	return output_exe;
 	
 };
