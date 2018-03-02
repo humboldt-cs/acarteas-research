@@ -1,13 +1,16 @@
-exports.decompressFunction =  function(path)
+exports.decompressFunction =  function(path,callback)
 {
 
 	//unzips the source file
 	const decompress = require('decompress');
 	 
 	decompress(path, './').then(files => {
-	    console.log('step 2: unzipping source.cpp files complete!');
-
+	  	console.log('step 2: unzipping source.cpp files complete!');
+	      
+	   	callback();
 	});
+	//callback();
+	//callback2;
 
 	//return 'main.exe';
 	

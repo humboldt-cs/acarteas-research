@@ -1,4 +1,4 @@
-exports.runningExe = function(fileName,file)
+exports.runningExe = function(fileName,file,callback)
 {
   var fs = require('fs');
   var path1 = fileName;
@@ -18,17 +18,18 @@ exports.runningExe = function(fileName,file)
       
       //save to output
 
-      fs.writeFile('output.txt',data,function(err)
+      fs.writeFileSync('output.txt',data,function(err)
       {
         if (err) throw err;
         console.log('step four: run module complete');
         
 
-
+        
         
       });
 
 
     });
+    callback;
 
 };

@@ -1,5 +1,5 @@
 
-exports.deleteFunction =  function(file,mainExe)
+exports.deleteFunction =  function(file,mainExe,callback)
 {
     var fs = require('fs');
 
@@ -20,6 +20,7 @@ exports.deleteFunction =  function(file,mainExe)
     fs.unlinkSync('./' + file);
     console.log('Zip file deleted');
 
-    console.log('Step 5: delete module complete')
-
+    console.log('Step 5: delete module complete');
+    
+    callback;
 };

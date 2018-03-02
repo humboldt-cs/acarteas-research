@@ -1,9 +1,9 @@
-exports.compileFunction = function(file, subfolder)
+exports.compileFunction = function(file, subfolder,callback)
 {
 
 	//dependencies
 	var fs = require('fs');
-	var spawn = require('child_process').spawn;
+	var spawn = require('child_process').spawnSync;
 	var output_exe = "main.exe";
 	//code: compile sourcecode, spawn and run batch file.
 	function spawnProcess(dir, cmd) {
@@ -13,13 +13,13 @@ exports.compileFunction = function(file, subfolder)
 	}
 
 	function spawnWindowsProcess(dir, cmd) {
-	  return spawnSync("cmd.exe", ["/c", cmd], {cwd: dir});
+	  return spawn("cmd.exe", ["/c", cmd], {cwd: dir});
 	}
 
 	function spawnLinuxProcess(dir, cmd) {
 	  var cmdParts = cmd.split(/\s+/);
 
-	  return spawnSync(cmdParts[0], cmdParts.slice(1), { cwd: dir});
+	  return spawn(cmdParts[0], cmdParts.slice(1), { cwd: dir});
 	}
 
 	let rch = function runCmdHandler(dir, cmd) {
@@ -34,7 +34,7 @@ exports.compileFunction = function(file, subfolder)
 	    //console.log("executing CMD commands");
 	    return;
 	  }
-
+/*
 	  process.stdout.on('data', function (data) {
 	    console.log("data in compile module -- processing", data.toString('utf-8'));
 	  });
@@ -44,13 +44,14 @@ exports.compileFunction = function(file, subfolder)
 	    console.log("error", data.toString('utf-8'));
 	  });
 
+*/
 
-
-	  process.on('exit', function (code) {
+	  //process.on('exit')
 	    //console.log("step 2: compile-module is finished.");
 	    //callback(fileName,file);
+	 
+	
 		
-	  });
 		  
 	}
 
@@ -87,6 +88,8 @@ exports.compileFunction = function(file, subfolder)
 
 	console.log('step 3: compile.bat has been made');
 
-	return output_exe;
+	//return output_exe;
+	
+	callback();
 	
 };

@@ -6,12 +6,12 @@ exports.renameFunction =  function(files, oldpath, callback)
 	//relative paths      	
     var newpath = './' + files;
 
-    fs.rename(oldpath, newpath, function (err) {
-        if (err) throw err;
-        console.log('step 1: temp zip File acquired and named.');
-        callback();
-    });
-
+    fs.renameSync(oldpath, newpath);
+        
+    console.log('step 1: temp zip File acquired and named.');
+    callback();
     return newpath;
+    //callback2();
+    //return newpath;
 
 };

@@ -4,7 +4,7 @@
 //will compare against given input in 'input.txt'.  
 
   //sub folder where our current version is.
-  var subfolder = 'Trial8';
+  var subfolder = 'Trial10';
 
   //npms
   var http = require('http');
@@ -48,14 +48,14 @@
         var returnfifthFunction;
 
         //BIG COMMENT that explains the overall process of what's happening (e.g. create batch, unzip...)
-        returnSecondFunction = renameFile.renameFunction(
+          var newpath = renameFile.renameFunction(
           file, 
           oldpath,
 
           //this is what call the decompress
           function(){
             decompressFile.decompressFunction(
-              returnSecondFunction,
+           		file,
 
               //after decompression, attempt to compile
               function(){
