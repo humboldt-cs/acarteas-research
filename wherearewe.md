@@ -159,3 +159,8 @@ function go()
 async call to exec is running out of order ; regardless of our spinlocks.  trying for execFileSync()
 
 from here: https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback
+
+#3.22.18
+
+we worked on callbacks.  maincallback chain in origin.js is working until "step 3: compile.bat has been made".  next step is callbacks in run.  then delete.  
+
