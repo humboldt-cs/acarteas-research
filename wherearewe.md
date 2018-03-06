@@ -173,3 +173,12 @@ full functionality is restored to the APP!
 we need to locate the name of the .obj file.  or locate the .cpp file name, so as to delete it IF IT DIFFERS FROM  the name of the .zip!
 
 thought; we could force a rename so we automatically know the name of the file.
+
+#3.6.18
+
+still trying to fijgure out how to delete obj.  we COULD unzip and run in a seperate temp folder, and then del '*.*'
+
+currently "main.exe" is running in the same shell, so it may be that we could make a bat to run it seperately in a new shell; thus we are able to delete or move the object later.
+
+went deep into formidable and recovered a field, pushed it into an array, and called it later (for housekeeping reasons and to differentiate users).
+
