@@ -26,11 +26,28 @@
   http.createServer(function (req, res) {
     if (req.url == '/fileupload') {
       var form = new formidable.IncomingForm();
-     
+
+   		files = [],
+   		fields = [];
+
+        var uname;
+        form.on('field' ,function(field,value){
+        	fields.push([field,value])
+        	//console.log('this should show our field and vlaue'+field,value);
+        });
+     	
       form.parse(req, function (err, fields, files){
 
         //grab the file name of *.zip 
         var file = files.filetoupload.name;
+
+        var stuname = fields['uname'];        
+
+
+
+        console.log('dis is r field value hehe XD ' + stuname);
+       
+
          
         //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
@@ -93,6 +110,7 @@
       res.writeHead(200, {'Content-Type': 'text/html'});
       res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
       res.write('<input type="file" name="filetoupload"><br>');
+      res.write('<input type="text" name="uname"><br>');
       res.write('<input type="submit">');
       res.write('</form>');
       return res.end();
