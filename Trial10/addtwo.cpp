@@ -4,10 +4,7 @@ using namespace std;
 int main()
 {
 	int x = 2;
-	int y = 3;
-
-	//cin >> x;
-	//cin >> y;
+	int y = 2;
 	
 
 	cout << x + y <<endl;

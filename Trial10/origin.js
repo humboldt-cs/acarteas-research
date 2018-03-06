@@ -19,11 +19,6 @@
   var renameFile = require('./rename-module');
   var deleteStuff = require('./delete-module');
 
-  //spin locks
-  var lock2 = false;
-  var lock3 = false;
-  var lock4 = false;
-  var lock5 = false;
 
   //TODO: add path variable for our executable files
 
@@ -40,32 +35,32 @@
         //save the temp file into our sourcecode location.
         var oldpath = files.filetoupload.path;
         
-        //list of return variables
-        var returnFirstFunction; //f1
-        var returnSecondFunction;
-        var returnThirdFunction;
-        var returnFourthFunction;
-        var returnfifthFunction;
 
-        //BIG COMMENT that explains the overall process of what's happening (e.g. create batch, unzip...)
+        //1. calling rename function to move the .zip file to a local path.
+        //2. decompress .zip to .cpp
+        //3. complie .cpp to .exe
+        //4. run .exe file, capturing output.
+        //5. delete unecessary files.      
           var newpath = renameFile.renameFunction(
           file, 
           oldpath,
 
-          //this is what call the decompress
+          //decompress zip to .cpp
           function(){
             decompressFile.decompressFunction(
            		file,
 
-              //after decompression, attempt to compile
+              //compile .cpp to .exe
               function(){
                 compile.compileFunction(
                     file, 
                     subfolder,
                     function(){ 
+                      //run the main.exe
                       runFile.runningExe(
                         './main.exe',
                         function(){
+                          //delete uneeded files
                           deleteStuff.deleteFunction(
                             file,
                             './main.exe',

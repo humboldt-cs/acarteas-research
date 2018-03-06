@@ -160,7 +160,16 @@ async call to exec is running out of order ; regardless of our spinlocks.  tryin
 
 from here: https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback
 
-#3.22.18
+#3.2.18
 
 we worked on callbacks.  maincallback chain in origin.js is working until "step 3: compile.bat has been made".  next step is callbacks in run.  then delete.  
 
+#3.5.18
+
+added a promise chain to delete module. 
+
+full functionality is restored to the APP!
+
+we need to locate the name of the .obj file.  or locate the .cpp file name, so as to delete it IF IT DIFFERS FROM  the name of the .zip!
+
+thought; we could force a rename so we automatically know the name of the file.

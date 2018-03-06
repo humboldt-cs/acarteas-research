@@ -1,4 +1,4 @@
-exports.runningExe = function(fileName,file,callback)
+exports.runningExe = function(fileName,callback)
 {
   var fs = require('fs');
   var path1 = fileName;
@@ -9,7 +9,7 @@ exports.runningExe = function(fileName,file,callback)
   //{
     //console.log("fun() start");
     //TODO:  IT IS BREAKING HERE ON RIGHT HERE< PLEASE LOOK HERE TODO
-    execFileSync.execFileSync(path1,[''],{},function(err,data)
+    execFileSync.execFile(path1,[''],{},function(err,data)
     {
       //main.exe < inputs
 
@@ -25,11 +25,11 @@ exports.runningExe = function(fileName,file,callback)
         
 
         
-        
       });
 
-
+      
     });
-    callback;
+    
+    callback();
 
 };
