@@ -182,3 +182,38 @@ currently "main.exe" is running in the same shell, so it may be that we could ma
 
 went deep into formidable and recovered a field, pushed it into an array, and called it later (for housekeeping reasons and to differentiate users).
 
+#3.7.18
+
+successfully created a directory to move files.
+successfully moved a file into new location.  
+
+next step is compiling in new directory (or moving things as the last step before delete)
+
+##hackathon
+free food
+no cost
+project
+
+####cons:
+working with members of the community (highschoolers) with lower standards
+in the library 
+
+---
+
+##research
+looks good on res
+get into grad school
+offers different experience
+
+####cons:
+price tag - travel, stay, food, get in.
+travel time
+unsexy topic choice -- not parallel computing
+people
+
+---
+
+Hackathon chosen.
+
+
+
