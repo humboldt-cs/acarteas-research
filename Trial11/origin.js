@@ -42,7 +42,9 @@
         var file = files.filetoupload.name;
         //grab the name of the value of usersname in text field: em1909
         var stuname = fields['uname'];        
-
+        // passed to our compile module to make a .bat for that student's subfolder
+        // trial version plus student name
+        var trialstupath = subfolder +'\\' + stuname;
          
         //save the temp file into our sourcecode location: something.zip
         var oldpath = files.filetoupload.path;
@@ -62,21 +64,25 @@
           function(){
             decompressFile.decompressFunction(
            		file,
+           		stuname,
 
               //compile .cpp to .exe
               function(){
                 compile.compileFunction(
                     file, 
-                    subfolder,
+                    trialstupath,
+                    stuname,
                     function(){ 
                       //run the main.exe
                       runFile.runningExe(
-                        './main.exe',
+                        './'+stuname+'/main.exe',
+                        stuname,
                         function(){
                           //delete uneeded files
                           deleteStuff.deleteFunction(
                             file,
                             './main.exe',
+                            stuname,
                             function(){
                               //everything is done, call function that sends this info to the user
                             }

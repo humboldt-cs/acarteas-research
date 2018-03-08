@@ -215,5 +215,10 @@ people
 
 Hackathon chosen.
 
-
+#3.8.2018
+We have manged to move all files and compiles in a subfolder for testing.
+We are now working on our delete module which will hve an added find feature locating
+the .obj file and deleting it. 
+Saved out put of running programs.
+can make more than 1 new directiory with our conflicts 'stress tested'
 

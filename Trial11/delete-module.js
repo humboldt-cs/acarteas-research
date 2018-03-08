@@ -1,7 +1,19 @@
 
-exports.deleteFunction =  function(file,mainExe,callback)
+exports.deleteFunction =  function(file,mainExe,stuname,callback)
 {
     var fs = require('fs');
+    var objectfile;
+    var filearray = fs.readdirSync('./'+stuname);
+    for(var i in filearray){
+    	console.log('This is file ' + filearray[i] + ' at location ' + i);
+    	//objectfile = filearray.find(funciton('.obj'){
+    	//	console.log('this is object file ' + objectfile);		
+    	//});
+    				
+    }
+
+    
+
 
     //make our functions so we can deal with them in a promise
     let firstPromise = function(){
@@ -11,7 +23,7 @@ exports.deleteFunction =  function(file,mainExe,callback)
       	//we need to locate the name of the .obj file.  or locate the .cpp file name.
       	var temp = file;
 	    temp = temp.substring(0,temp.length - 3);
-	    fs.unlinkSync('./' + file + '.obj');
+	    fs.unlinkSync('./'+ stuname+'/' + file + '.obj');
 	    console.log('object deleted'); 
       	resolve('firstPromise');   
       });
@@ -30,7 +42,7 @@ exports.deleteFunction =  function(file,mainExe,callback)
     let thirdPromise = function() {
       return new Promise(function(resolve,reject){
         //delete zip
-	    fs.unlinkSync('./' + file);
+	    fs.unlinkSync('./' + stuname +'/'+ file);
 	    console.log('Zip file deleted');
         resolve('thirdPromise');
       });          
@@ -41,7 +53,7 @@ exports.deleteFunction =  function(file,mainExe,callback)
       return new Promise(function(resolve,reject){
       	// delete main.exe
       	//ISSUE: cannot delete main, possible that its currently in use in window.
-	    setTimeout( fs.unlinkSync('./' + mainExe), 500 );
+	    setTimeout( fs.unlinkSync('./' +stuname+'/'+ mainExe), 500 );
 	    console.log('Main.exe deleted');
 
 	    console.log('Step 5: delete module complete'); 

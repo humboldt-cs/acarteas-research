@@ -1,4 +1,4 @@
-exports.compileFunction = function(file, subfolder,callback)
+exports.compileFunction = function(file,trialstupath,stuname,callback)
 {
 
 	//dependencies
@@ -71,7 +71,7 @@ exports.compileFunction = function(file, subfolder,callback)
 
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
-	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\'+ subfolder +'\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\'+ trialstupath +'\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
 
