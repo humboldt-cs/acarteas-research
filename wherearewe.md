@@ -232,5 +232,11 @@ fixed issue with broken promise exception.
 stress test complete; multiple users!
 
 now looking into MERN
+for react:
+https://reactjs.org/tutorial/tutorial.html
 
+for mern:
+http://mern.io/
+
+#
 
