@@ -6,10 +6,14 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     var filearray = fs.readdirSync('./'+stuname);
     for(var i in filearray){
     	console.log('This is file ' + filearray[i] + ' at location ' + i);
+    	var tempobject = filearray[i].length;
+    	if (filearray[i] ){
+
+    	}
+
     	//objectfile = filearray.find(funciton('.obj'){
     	//	console.log('this is object file ' + objectfile);		
-    	//});
-    				
+    	//});				
     }
 
     

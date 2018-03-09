@@ -9,22 +9,19 @@ exports.renameFunction =  function(stuname,files, oldpath, callback)
 	//variable needed to check for folder
 	var studentPath = './' + stuname + '/' + files;
 
+	var checkit = fs.existsSync('./' + stuname);
     //if username doesn't exist, make it.
-    if ( fs.existsSync(studentPath) ){
+    if ( checkit ){
     	//nothing
-    	console.log('path exists, don\'t make a new one');
+    	//console.log('path exists, don\'t make a new one');
     }
     else {
-    	console.log('path doesn\'t exist.  new path made here: ' + studentPath);
+    	//console.log('path doesn\'t exist.  new path made here: ' + studentPath);
     	//make the directory as the student name
     	fs.mkdirSync(stuname, []);
     }
-
-	
-
-    //console.log(newpath)
-
     
+    //list of variables we're using here.
     //oldpath = something.zip
     //stuname = em1909 
     //files = addtwo.zip
@@ -34,11 +31,11 @@ exports.renameFunction =  function(stuname,files, oldpath, callback)
     //renames the zip file
     fs.renameSync(oldpath, newpath);
 
-    console.log('oldpath should be: '+ oldpath);
-	console.log('stuname should be: '+ stuname);
-	console.log('files should be: '+ files);
-	console.log('newpath should be: '+ newpath);
-	console.log('studentPath should be: '+ studentPath);
+    //console.log('oldpath should be: '+ oldpath);
+	//console.log('stuname should be: '+ stuname);
+	//console.log('files should be: '+ files);
+	//console.log('newpath should be: '+ newpath);
+	//console.log('studentPath should be: '+ studentPath);
 
     //test - THIS WORKS, OUR FILE IS NOw moVED InTO A NEW LOCATION
     //THIS ALSO BREAKS THE REST OF THE CODE< BECAUSE ITS NOT DESIGNED FOR THE MOVE

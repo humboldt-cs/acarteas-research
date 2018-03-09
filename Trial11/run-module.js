@@ -14,7 +14,7 @@ exports.runningExe = function(fileName,stuname,callback)
       //main.exe < inputs
 
       //console.log(err);
-      console.log("output to txt file: " + data);
+      console.log("final output to txt file: " + data);
       
       //save to output
 
