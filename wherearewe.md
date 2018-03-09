@@ -222,3 +222,6 @@ the .obj file and deleting it.
 Saved out put of running programs.
 can make more than 1 new directiory with our conflicts 'stress tested'
 
+
+look into : 
+

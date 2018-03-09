@@ -23,7 +23,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
       	//we need to locate the name of the .obj file.  or locate the .cpp file name.
       	var temp = file;
 	    temp = temp.substring(0,temp.length - 3);
-	    fs.unlinkSync('./'+ stuname+'/' + file + '.obj');
+	    //fs.unlinkSync('./'+ stuname+'/' + file + '.obj');
 	    console.log('object deleted'); 
       	resolve('firstPromise');   
       });
