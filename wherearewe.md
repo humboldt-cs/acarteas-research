@@ -223,5 +223,14 @@ Saved out put of running programs.
 can make more than 1 new directiory with our conflicts 'stress tested'
 
 
-look into : 
+#3.9.18
+fixed and cleaned up filebase.
+we have located all our files.  
+we have deleted our .obj!
+fixed issue with  existing directories.
+fixed issue with broken promise exception.
+stress test complete; multiple users!
+
+now looking into MERN
+
 
