@@ -182,19 +182,19 @@ currently "main.exe" is running in the same shell, so it may be that we could ma
 
 went deep into formidable and recovered a field, pushed it into an array, and called it later (for housekeeping reasons and to differentiate users).
 
-#3.7.18
+# 3.7.18
 
 successfully created a directory to move files.
 successfully moved a file into new location.  
 
 next step is compiling in new directory (or moving things as the last step before delete)
 
-##hackathon
+## hackathon
 free food
 no cost
 project
 
-####cons:
+#### cons:
 working with members of the community (highschoolers) with lower standards
 in the library 
 
@@ -223,7 +223,7 @@ Saved out put of running programs.
 can make more than 1 new directiory with our conflicts 'stress tested'
 
 
-#3.9.18
+# 3.9.18
 fixed and cleaned up filebase.
 we have located all our files.  
 we have deleted our .obj!
@@ -238,5 +238,17 @@ https://reactjs.org/tutorial/tutorial.html
 for mern:
 http://mern.io/
 
-#
+# 3.20.18
+
+installed react on the server.  
+
+updated steps on readme.
+
+followed the youtube tutorial for reactJS
+current progress is here:
+https://youtu.be/A71aqufiNtQ?t=1144
+
+
+
+
 

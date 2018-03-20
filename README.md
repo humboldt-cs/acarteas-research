@@ -45,5 +45,30 @@ List of NPM modules for our project:
 	b. "npm install --save decompress"
 --
  
-##to stop the server; go to the tools page,  start ISS manager  
-##then select the server from the list on the left and hit stop
+## to stop the server; go to the tools page,  start ISS manager  
+## then select the server from the list on the left and hit stop
+
+## We are using react;  installation steps HERE:
+
+go to for details:
+https://reactjs.org/docs/try-react.html
+
+the video tutorial we (loosely) followed:
+https://www.youtube.com/watch?v=A71aqufiNtQ
+
+1. navigate to a CMD window to the appropriate user
+
+2. type: 
+npm install -g create-react-app
+
+3. to create a new react app:
+create-react-app <name-of-hello-world>
+
+4. cd into the directory and to start:
+"npm start"
+
+5. start changing things on the HTML page at src/App.js
+
+
+
+
