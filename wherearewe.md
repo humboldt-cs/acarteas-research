@@ -248,7 +248,10 @@ followed the youtube tutorial for reactJS
 current progress is here:
 https://youtu.be/A71aqufiNtQ?t=1144
 
+# 3.21.18
 
+we ended the video here 
+https://youtu.be/A71aqufiNtQ?t=2461
 
 
 
