@@ -1,10 +1,10 @@
-#1.26.18
-#we now have a working compile.js module!
+# 1.26.18
+## we now have a working compile.js module!
 
 'adam-test-jk.js' is a functional exportable module, which will take as a parameter the name of the 'sourcecode.cpp' file, and create with the batfile 'compilejk.bat'.
 note that we are hardcoded with pathing to run on the development server platform!
 
-#what we need
+# what we need
 
 we will eventually need to switch to SDK.
 
