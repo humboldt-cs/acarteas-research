@@ -253,5 +253,7 @@ https://youtu.be/A71aqufiNtQ?t=1144
 we ended the video here 
 https://youtu.be/A71aqufiNtQ?t=2461
 
+# 3.22.18
 
-
+have to figure out how to get mern started
+requires mongodb to be on 
