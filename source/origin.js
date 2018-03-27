@@ -4,7 +4,7 @@
 //will compare against given input in 'input.txt'.  
 
   //sub folder where our current version is.
-  var subfolder = 'Trial11';
+  var subfolder = 'source';
 
   //npms
   var http = require('http');
