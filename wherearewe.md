@@ -66,7 +66,7 @@ what we need:
 the search for another objective
 1. we want to take in the file as a .zip.  then we must unzip the thing.
 
-*.cpp will be the thing we need to add, instead of using the name of the file.  
+(star).cpp will be the thing we need to add, instead of using the name of the file.  
 
 # 2.15.2018
 working on inputs
@@ -257,3 +257,12 @@ https://youtu.be/A71aqufiNtQ?t=2461
 
 have to figure out how to get mern started
 requires mongodb to be on 
+
+# 3.26.18
+
+mongodb is disappearing on the server after install.  
+solution not listed on the internet.  
+no solutions found after a full two hours.  
+
+moving to local environment for the stack -- we will talk to adam about options for the server once we have him available.
+
