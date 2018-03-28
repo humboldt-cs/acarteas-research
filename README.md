@@ -40,10 +40,16 @@ List of NPM modules for our project:
 3. type:
 	
 	
-	a. "npm install formidable"
-	//for capturing forms 
-	b. "npm install --save decompress"
---
+	a. npm install formidable
+	b. npm install --save decompress
+	c. npm install -g create-react-app
+	d. npm install --save react
+	e. npm install --save react-dom
+	g. npm install --save-dev bable-core babel-loader babel-preset-es2015 babel-preset-react
+	h. 
+
+
+---
  
 ## to stop the server; go to the tools page,  start ISS manager  
 ## then select the server from the list on the left and hit stop
@@ -58,8 +64,6 @@ https://www.youtube.com/watch?v=A71aqufiNtQ
 
 1. navigate to a CMD window to the appropriate user
 
-2. type: 
-npm install -g create-react-app
 
 3. to create a new react app:
 create-react-app <name-of-hello-world>
