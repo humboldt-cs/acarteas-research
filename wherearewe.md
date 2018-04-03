@@ -266,3 +266,13 @@ no solutions found after a full two hours.
 
 moving to local environment for the stack -- we will talk to adam about options for the server once we have him available.
 
+# 4.2.18
+
+https://reactjs.org/tutorial/tutorial.html
+
+https://github.com/esausilva/example-create-react-app-express/blob/master/package.json
+
+two more examples we've looked through!
+
+we can run a server and run our frontpage.
+

@@ -44,9 +44,8 @@ List of NPM modules for our project:
 	b. npm install --save decompress
 	c. npm install -g create-react-app
 	d. npm install --save react
-	e. npm install --save react-dom
-	g. npm install --save-dev bable-core babel-loader babel-preset-es2015 babel-preset-react
-	h. 
+	e. npm i nodemon -g
+	
 
 
 ---
