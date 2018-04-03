@@ -276,3 +276,23 @@ two more examples we've looked through!
 
 we can run a server and run our frontpage.
 
+# 4.3.18
+
+
+express app REST tutorial
+
+expose these end points to give our react app data
+
+a way to upload data ; creating the end point -- a rest endpoint that accepts a file to upload.  thats when we plug in the code that we've already written.
+
+when we send that information what should be returned is the results.
+
+
+don't worry about react right now.  focus on creating that endpoint.
+
+create the model (data).  
+
+https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
+
+
+
