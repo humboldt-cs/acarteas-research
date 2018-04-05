@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+var express = require('express');
+var app = express();
+var router = express.Router();
+var bodyParser = require('body-parser');
+
+router.use(bodyParser.urlencoded({ extended: true }));
+
 class App extends Component {
   render() {
     return (

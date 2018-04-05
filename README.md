@@ -83,10 +83,11 @@ https://app.getpostman.com/app/download/win64
 
 ## modules needed for compile-me, our tutorial in express + node + react
 
-- npm init
-- npm install express --save
-- npm install mongoose --save
-- npm install body-parser --save
+``` 
+npm init
+npm install express --save
+npm install mongoose --save
+npm install body-parser --save
+npm i -S formidable
 
-
-
+```
