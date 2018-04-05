@@ -39,12 +39,13 @@ List of NPM modules for our project:
 2. navigate to: C:\Users\!!Your Name!!>
 3. type:
 	
-	
-	a. npm install formidable
-	b. npm install --save decompress
-	c. npm install -g create-react-app
-	d. npm install --save react
-	e. npm i nodemon -g
+	a. npm install
+	b. npm install formidable
+	c. npm install --save decompress
+	d. npm install -g create-react-app
+	e. npm install --save react
+	f. npm i nodemon -g
+	g. npm install express --save
 	
 
 
@@ -73,7 +74,19 @@ create-react-app <name-of-hello-world>
 5. start changing things on the HTML page at src/App.js
 
 
+## testing API calls
 
+we used POSTMAN to test our APIs!
+https://app.getpostman.com/app/download/win64
+
+
+
+## modules needed for compile-me, our tutorial in express + node + react
+
+- npm init
+- npm install express --save
+- npm install mongoose --save
+- npm install body-parser --save
 
 
 

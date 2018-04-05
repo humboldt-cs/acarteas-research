@@ -292,7 +292,18 @@ don't worry about react right now.  focus on creating that endpoint.
 
 create the model (data).  
 
+
+# 4.4.18
+
 https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4
 
+https://hackernoon.com/restful-api-design-with-node-js-26ccf66eab09
 
+how do we make a model?  and also what is a model
+
+how do get mongo on server?   it does not stay installed.  removed immediately.
+
+so we can create a port.listen in our server instead of a connection to mongodb....right?
+
+we think that mongoose is a wrapper that hands off objects to and from express.  true?
 
