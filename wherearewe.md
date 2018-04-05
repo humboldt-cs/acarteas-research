@@ -307,3 +307,44 @@ so we can create a port.listen in our server instead of a connection to mongodb.
 
 we think that mongoose is a wrapper that hands off objects to and from express.  true?
 
+
+
+# 4.5.18
+
+models: assignment
+pA
+file
+inputs
+outputs
+
+model: user
+username
+
+
+submission has an assignment and an author
+
+controller gives models to the view, which the view presents.
+
+manipulated.  the view then sends the modified view back to the controller, which then handles the modified model at that point.
+
+models don't know aobut views
+dmodels don't know about controllers
+
+views know about models
+a view should not know about a controller.
+
+the controller tells the view, but if the view needs to change it informs the controller its done processing.  like a submit button on a form. asks the controller, "what happens next?"
+
+we know our view is react ;  we can mock that up.  the view doesn't need to know about it.
+
+what would a view look like in react?
+
+next view is results?
+
+models should be abstracted.  not tied to any particular device; such as mongo..
+
+controller gets a pure object (poco) plain old code object.  it doesn't know how you get saved to the database.  "database, update this."  
+
+
+use express to callback at the end of our node code and create a return to our model view.  research how to return data back to the view.
+
