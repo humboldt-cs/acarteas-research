@@ -93,5 +93,9 @@ npm install body-parser --save
 =======
 >>>>>>> b523632055b1422170100310f8ee2941fb382986
 npm i -S formidable
+npm i nodemon --save-dev
 
 ```
+to run:
+nodemon index.js
+
