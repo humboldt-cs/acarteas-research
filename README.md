@@ -85,9 +85,8 @@ https://app.getpostman.com/app/download/win64
 
 ``` 
 npm init
+npm install
 npm install express --save
-npm install mongoose --save
-npm install body-parser --save
 npm i -S formidable
 
 ```
