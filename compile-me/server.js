@@ -21,6 +21,31 @@ var router = express.Router();              // get an instance of the express Ro
 // middleware to use for all requests
 router.use(function(req, res, next) {
     // do logging
+
+    var formidable = require('formidable');
+    var form = new formidable.IncomingForm();
+
+    files = [],
+   	fields = [];
+    var uname;
+
+    form.on('field' ,function(field,value){
+    	fields.push([field,value])
+    	//console.log('this should show our field and vlaue'+field,value);
+    });
+
+    form.parse(req, function (err, fields, files){
+      //grab the file name of *.zip:  addtwo.zip
+        var file = files.filetoupload.name;
+        //grab the name of the value of usersname in text field: em1909
+        var stuname = fields['uname'];
+
+        console.log('file: ' + file);
+        console.log('student name: ' + stuname);
+        return res.end();
+    });
+
+
     console.log('Something is happening.');
     next(); // make sure we go to the next routes and don't stop here
 });

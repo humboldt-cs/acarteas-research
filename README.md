@@ -33,28 +33,29 @@ To run a node.js file from the command line:
 
 ---
 
-List of NPM modules for our project:
+## List of NPM modules for our NODE project:
 
 1. Open a commmand prompt (run as admin) 
 2. navigate to: C:\Users\!!Your Name!!>
 3. type:
-	
-	a. npm install
-	b. npm install formidable
-	c. npm install --save decompress
-	d. npm install -g create-react-app
-	e. npm install --save react
-	f. npm i nodemon -g
-	g. npm install express --save
-	
 
+```	
+npm install
+npm install formidable
+npm install --save decompress
+npm install -g create-react-app
+npm install --save react
+npm i nodemon -g
+npm install express --save
+	
+```
 
 ---
  
-## to stop the server; go to the tools page,  start ISS manager  
-## then select the server from the list on the left and hit stop
-
-## We are using react;  installation steps HERE:
+## to stop the server (on ISS) 
+go to the tools page,  start ISS manager  
+then select the server from the list on the left and hit stop
+We are using react;  installation steps HERE:
 
 go to for details:
 https://reactjs.org/docs/try-react.html
@@ -86,7 +87,6 @@ https://app.getpostman.com/app/download/win64
 ``` 
 npm init
 npm install express --save
-npm install mongoose --save
 npm install body-parser --save
 npm i -S formidable
 

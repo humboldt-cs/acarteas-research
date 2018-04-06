@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-var express = require('express');
-var app = express();
-var router = express.Router();
-var bodyParser = require('body-parser');
+//var express = require('express');
+//var app = express();
+//var router = express.Router();
+//var bodyParser = require('body-parser');
 
-router.use(bodyParser.urlencoded({ extended: true }));
+//router.use(bodyParser.urlencoded({ extended: true }));
 
 class App extends Component {
   render() {
@@ -21,8 +21,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <form action = "filetoupload" method = "post" enctype="multipart/form-data">
-          <input type = "file" name = "filetoupload" />
+        <form action = "api" method = "post" enctype="multipart/form-data">
+          <input type = "file" name = "api" />
           <br />
           Student Name: <input type="text" name="Student Name" id="Stu_name" placeholder = "Eric Kinne"/>
           <br />
