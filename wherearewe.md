@@ -350,3 +350,17 @@ use express to callback at the end of our node code and create a return to our m
 
 # 4.6.18
 
+we have built routes and exposed endpoints!
+
+we sending data through put
+
+catching data in server on a different port.
+
+fromidible is parsing our multipart form
+
+we are seeing json results
+
+next step:
+
+recover form objects from our router.post (req) parameter. (in JSON format)
+

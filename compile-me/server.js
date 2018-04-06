@@ -52,6 +52,14 @@ router.get('/', function(req, res) {
 });
 
 // more routes for our API will happen here
+router.post('/', function(req, res) {
+  //breaking it here:
+    var outputCheck = req.filetoupload;
+    console.log('filetoupload should be: ' + outputCheck);
+    res.json({ message: 'Compiling code.  Standby!' });
+});
+
+
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api

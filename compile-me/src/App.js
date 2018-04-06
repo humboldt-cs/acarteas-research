@@ -22,13 +22,13 @@ class App extends Component {
         </p>
 
         <form action = "api" method = "post" enctype="multipart/form-data">
-          <input type = "file" name = "api" />
+          <input type = "file" name = "filetoupload" />
           <br />
-          Student Name: <input type="text" name="Student Name" id="Stu_name" placeholder = "Eric Kinne"/>
+          Student Name: <input type="text" name="uname" id="stu_name" placeholder = "Eric Kinne"/>
           <br />
-          PA Number: <input type="text" name="PA Number" id="pa_name" placeholder = "12"/>
+          PA Number: <input type="text" name="paNumber" id="pa_name" placeholder = "12"/>
           <br />
-          Input: <input type="text" name="Input" id="input" placeholder = "1 2 4 17 32"/>
+          Input: <input type="text" name="input" id="inputValues" placeholder = "1 2 4 17 32"/>
           <br />
           <input type="submit" value="Submit" id="submit"/>
         </form>
