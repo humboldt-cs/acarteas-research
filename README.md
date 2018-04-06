@@ -86,8 +86,12 @@ https://app.getpostman.com/app/download/win64
 
 ``` 
 npm init
+npm install
 npm install express --save
+<<<<<<< HEAD
 npm install body-parser --save
+=======
+>>>>>>> b523632055b1422170100310f8ee2941fb382986
 npm i -S formidable
 
 ```
