@@ -6,6 +6,8 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 //const formidable = require('express-formidable'); // call express formidable
 
+//including our node.js code
+var node_code = require('./source/origin');
 
 var port = process.env.PORT || 8080;        // set our port
 
@@ -36,8 +38,18 @@ router.use(function(req, res, next) {
         //grab the name of the value of usersname in text field: em1909
         var stuname = fields['uname'];
 
+        var pa = fields['paNumber'];
+
+        var input_vals = fields['input'];
+
+        var oldpath = files.filetoupload.path;
+
         console.log('file: ' + file);
         console.log('student name: ' + stuname);
+        console.log('Programming assignment: ' + pa);
+        console.log('inputs here: ' + input_vals);
+        console.log('Old Path: ' + oldpath);
+        node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
         return res.end();
     });
 
@@ -54,8 +66,7 @@ router.get('/', function(req, res) {
 // more routes for our API will happen here
 router.post('/', function(req, res) {
   //breaking it here:
-    var outputCheck = req.filetoupload;
-    console.log('filetoupload should be: ' + outputCheck);
+
     res.json({ message: 'Compiling code.  Standby!' });
 });
 
