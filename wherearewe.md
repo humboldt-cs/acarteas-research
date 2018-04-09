@@ -352,15 +352,33 @@ use express to callback at the end of our node code and create a return to our m
 
 we have built routes and exposed endpoints!
 
-we sending data through put
+we can send data through a post
 
-catching data in server on a different port.
+we are catching data in server on a different port.
 
-fromidible is parsing our multipart form
+fromidible is parsing our multipart form.
 
-we are seeing json results
+we are seeing json results returned.
 
 next step:
 
-recover form objects from our router.post (req) parameter. (in JSON format)
+recover form objects from our router.post (req) parameter. (its in JSON format).
 
+
+# 4.9.18
+
+- (React) we have successfully served a react front page and created a form submission,
+- (Express) listened for and caught the request on a seperately running port (endpoint),
+- (node) ran our code successfully!
+
+//toDO:
+backend:
+- inputs
+- change SDK
+front end: 
+- unit testing
+- form rejection and resubmit
+- serve a results page
+
+
+#
