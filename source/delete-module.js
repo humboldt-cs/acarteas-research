@@ -24,7 +24,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     let firstPromise = function(){
       return new Promise(function(resolve,reject){
       	//delete of object
-	    fs.unlinkSync('./'+ stuname+'/' + objectfile);
+	    fs.unlinkSync('compile-me/'+ stuname+'/' + objectfile);
 	    console.log('object deleted'); 
       	resolve('firstPromise');   
       });
@@ -43,7 +43,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     let thirdPromise = function() {
       return new Promise(function(resolve,reject){
         //delete zip
-	    fs.unlinkSync('./' + stuname +'/'+ file);
+	    fs.unlinkSync('compile-me/' + stuname +'/'+ file);
 	    console.log('Zip file deleted');
         resolve('thirdPromise');
       });          
@@ -54,7 +54,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
       return new Promise(function(resolve,reject){
       	// delete main.exe
       	//ISSUE: cannot delete main, possible that its currently in use in window.
-	    setTimeout( fs.unlinkSync('./' +stuname+'/'+ mainExe), 500 );
+	    setTimeout( fs.unlinkSync('compile-me/' +stuname+'/'+ mainExe), 500 );
 	    console.log('Main.exe deleted');
 
 	    console.log('Step 5: delete module complete'); 
@@ -68,7 +68,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     }).then(function(){
       return thirdPromise();
     }).catch(function(){
-      console.log('promises in delete are broke af');
+      //console.log('promises in delete are broke af');
     });
 
     callback();

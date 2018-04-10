@@ -59,13 +59,13 @@ exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
                     function(){ 
                       //run the main.exe
                       runFile.runningExe(
-                        './'+stuname+'/main.exe',
+                        'compile-me/'+stuname+'/main.exe',
                         stuname,
                         function(){
                           //delete uneeded files
                           deleteStuff.deleteFunction(
                             file,
-                            './main.exe',
+                            '/main.exe',
                             stuname,
                             function(){
                               //everything is done, call function that sends this info to the user
