@@ -18,7 +18,7 @@ exports.runningExe = function(fileName,stuname,callback)
       
       //save to output
 
-      fs.writeFileSync('compile-me/'+stuname+'/output.txt',data,function(err)
+      fs.writeFileSync('./'+stuname+'/output.txt',data,function(err)
       {
         if (err) throw err;
         console.log('step four: run module complete');

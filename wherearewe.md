@@ -383,3 +383,6 @@ front end:
 
 # 4.10.18
 
+everythings broken.  erics local copy is one step farther.
+
+fix from server; reinstall dependencies.  compare against erics local copy.  then resolve our github code.
