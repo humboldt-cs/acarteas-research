@@ -7,7 +7,7 @@ exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
 //will compare against given input in 'input.txt'.  
 
   //sub folder where our current version is.
-  var subfolder = 'source';
+  var subfolder = 'compile-me';
 
   //npms
   var http = require('http');

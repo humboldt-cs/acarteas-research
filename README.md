@@ -102,4 +102,14 @@ node server.js
 npm run start
 ```
 
+## to compile a .cpp file you must have the standalone visual studio build tools!
+
+download them here:
+> https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2017
+
+choose:
+> Build Tools for Visual Studio 2017
+
+
+
 Thank you to Professor Adam Carter for the funding and opportunity.
