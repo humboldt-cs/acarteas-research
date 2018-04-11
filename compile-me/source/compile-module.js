@@ -71,10 +71,11 @@ exports.compileFunction = function(file,trialstupath,stuname,callback)
 
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
-	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\'+ trialstupath +'\"\r\n';
+	var batComm2 = 'CD \"C:\\Users\\Eric\\Desktop\\acarteas-research\\'+ trialstupath +'\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
-
+	console.log(trialstupath);
+	console.log(batComm2);
 	//synchonronus writefile of batch
 	fs.writeFileSync('compile.bat',batComm1);
 	

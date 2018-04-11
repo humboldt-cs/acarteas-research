@@ -29,6 +29,7 @@ exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
         // passed to our compile module to make a .bat for that student's subfolder
         // trial version plus student name
         var trialstupath = subfolder +'\\' + stuname;
+        console.log(trialstupath);
          
         //save the temp file into our sourcecode location: something.zip
         //var oldpath = files.filetoupload.path;
