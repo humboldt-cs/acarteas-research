@@ -32,6 +32,7 @@ exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
          
         //save the temp file into our sourcecode location: something.zip
         //var oldpath = files.filetoupload.path;
+        console.log(trialstupath);
         
 
         //1. calling rename function to move the .zip file to a local path.

@@ -74,6 +74,9 @@ exports.compileFunction = function(file,trialstupath,stuname,callback)
 	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\acarteas-research\\'+ trialstupath +'\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
 	//console.log(sourceCpp);
+	console.log('this is batomm1' + batComm1);
+	console.log('this is batcomm2'+ batComm2);
+	console.log('this is batcomm3'+batComm3);
 
 	//synchonronus writefile of batch
 	fs.writeFileSync('compile.bat',batComm1);
@@ -81,6 +84,8 @@ exports.compileFunction = function(file,trialstupath,stuname,callback)
 	fs.appendFileSync('compile.bat',batComm2);
 	
 	fs.appendFileSync('compile.bat',batComm3);
+
+	console.log(batComm2);
 
 	//var full_command = "compile" + " " + vs_path + " " + local_path + " " + sourceCpp + " " + output_exe;
 

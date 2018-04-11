@@ -4,10 +4,9 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "express-formidable": "^1.0.0",
     "formidable": "^1.2.1",
-    "nodemon": "^1.17.3",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-scripts": "1.1.2"
@@ -21,7 +20,9 @@
   "proxy": "http://localhost:8080/",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "server.js",
-  "devDependencies": {},
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  },
+  "author": "Eric & Jack",
+  "license": "MIT"
 }
