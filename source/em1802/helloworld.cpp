@@ -1,8 +1,12 @@
-#include <iostream>
+#include<iostream> 
+ 
 using namespace std;
+ 
 
 int main()
 {
-	string sentence = "Hello,World"
-	cout << sentence <<endl;
+    // prints heelo world
+    cout << "Hello World";
+     
+    return 0;
 }

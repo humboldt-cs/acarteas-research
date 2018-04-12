@@ -9,7 +9,7 @@ var app        = express();                 // define our app using express
 //including our node.js code
 var node_code = require('./source/origin');
 
-var port = process.env.PORT || 8080;        // set our port
+var port = 8001;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
