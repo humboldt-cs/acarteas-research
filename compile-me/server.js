@@ -70,6 +70,8 @@ router.post('/', function(req, res) {
     res.json({ message: 'Compiling code.  Standby!' });
 });
 
+router.use(express.static('Output'));
+
 
 
 // REGISTER OUR ROUTES -------------------------------
