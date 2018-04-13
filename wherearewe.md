@@ -389,3 +389,10 @@ front end:
 - unit testing
 - form rejection and resubmit
 - serve a results page
+
+
+for inputs:
+https://ubuntuforums.org/showthread.php?t=2223392
+$ lcase < hello.txt
+hello world!
+
