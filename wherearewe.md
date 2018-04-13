@@ -371,6 +371,16 @@ recover form objects from our router.post (req) parameter. (its in JSON format).
 - (Express) listened for and caught the request on a seperately running port (endpoint),
 - (node) ran our code successfully!
 
+
+# 4.10.18
+
+fixed node code, currently having problems with ports 8001.
+
+# 4.12.18 + 4.11.18
+fixed our ports!
+
+# 4.13.18
+
 //toDO:
 backend:
 - inputs
@@ -379,8 +389,3 @@ front end:
 - unit testing
 - form rejection and resubmit
 - serve a results page
-
-
-# 4.10.18
-
-fixed node code, currently having problems with ports 8001.
