@@ -396,3 +396,6 @@ https://ubuntuforums.org/showthread.php?t=2223392
 $ lcase < hello.txt
 hello world!
 
+
+front end switching views
+https://www.youtube.com/watch?v=fGQFeV32nwE&index=16&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8
