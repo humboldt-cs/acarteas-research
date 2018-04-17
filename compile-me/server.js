@@ -58,6 +58,9 @@ router.use(function(req, res, next) {
     next(); // make sure we go to the next routes and don't stop here
 });
 
+app.use(express.static('public'));
+
+
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
     res.json({ message: 'Compiling code.  Standby!' });
@@ -65,12 +68,11 @@ router.get('/', function(req, res) {
 
 // more routes for our API will happen here
 router.post('/', function(req, res) {
-  //breaking it here:
+    //breaking it here:
+    
 
-    res.json({ message: 'Compiling code.  Standby!' });
+    //res.json({ message: 'Compiling code.  Standby!' });
 });
-
-router.use(express.static('Output'));
 
 
 

@@ -94,6 +94,7 @@ npm init
 npm i express --save
 npm i -S formidable
 npm i nodemon --save-dev
+npm install --save-dev babel-core
 
 ```
 ## to run our program:
