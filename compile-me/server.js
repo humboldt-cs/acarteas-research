@@ -3,8 +3,12 @@
 
 // call the packages we need
 var express    = require('express');        // call express
-var app        = express();                 // define our app using express
+var app        = express();
+var bodyParser = require('body-parser');
+util = require('util');              // define our app using express
 //const formidable = require('express-formidable'); // call express formidable
+
+console.log('HEre is a console log on line 10');
 
 //including our node.js code
 var node_code = require('./source/origin');
@@ -17,6 +21,13 @@ var port = process.env.PORT || 8001;        // set our port
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
+
+
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 
 
 // middleware to use for all requests
@@ -52,7 +63,10 @@ router.use(function(req, res, next) {
         console.log('Programming assignment: ' + pa);
         console.log('inputs here: ' + input_vals);
         console.log('Old Path: ' + oldpath);
-        node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
+        node_code.LaunchNode(file,stuname,pa,input_vals,oldpath,function(){
+            res.send(util.inspect({fields: fields}));
+        });
+
         return res.end();
     });
 
@@ -61,21 +75,28 @@ router.use(function(req, res, next) {
     next(); // make sure we go to the next routes and don't stop here
 });
 
-app.use(express.static('public'));
+
 
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
     res.json({ message: 'Compiling code.  Standby!' });
+    console.log('HEre is a console log on line 79');
 });
 
 // more routes for our API will happen here
 router.post('/', function(req, res) {
-    //breaking it here:
-    //const intializedOutput = new App();
-    //res.write(body);
-    //res.end();
-    //res.json({ message: 'Compiling code.  Standby!' });
+    //we want to get stuname
+    //we want to access the folder made for Stuname
+    //We want to read that file in stuname folder
+    //output the contents of student file to text box
+
+     var feildname = fields['uname'];
+
+    console.log('HEre is a console log on line 88');
+    //res.send({"message":"req.body.uname"}); 
+    console.log('this is student name: ' + fields.adName);
+
 });
 
 
@@ -83,6 +104,7 @@ router.post('/', function(req, res) {
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+
 
 // START THE SERVER
 // =============================================================================

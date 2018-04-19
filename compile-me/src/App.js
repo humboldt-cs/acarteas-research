@@ -16,6 +16,8 @@ class App extends Component {
     ReactDOM.render(<Output />, document.getElementById('root'));  
   }
 
+
+
   render() {
     return (
       <div  className="App" >
@@ -27,7 +29,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <form action = "api" method = "post" enctype="multipart/form-data">
+        <form action = "api" method = "post" encType="multipart/form-data">
           <input type = "file" name = "filetoupload" />
           <br />
           Student Name: <input type="text" name="uname" id="stu_name" placeholder = "Eric Kinne"/>
@@ -36,16 +38,16 @@ class App extends Component {
           <br />
           Input: <input type="text" name="input" id="inputValues" placeholder = "1 2 4 17 32"/>
           <br />
-          <input type="submit" value="Submit" id="submit" />
+          <input type="submit" value="Submit" id="submit" />    
+
         </form>
 
 
 
         <button onClick={this.onClickme} type="button">Click Me!</button>
-
-
+        <br />
         <React.Fragment>
-          <textarea id="returnedValuesOutputBox">this is a react fragment</textarea>
+          <textarea id="returnedValuesOutputBox"> </textarea>
         </React.Fragment>
 
       </div>
@@ -55,7 +57,9 @@ class App extends Component {
 
 
 class Output extends Component{
+
   render(){
+
     return(
       <div className = "Output">
         <p>This is a second page for output</p>
