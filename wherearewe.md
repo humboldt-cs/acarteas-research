@@ -399,3 +399,11 @@ hello world!
 
 front end switching views
 https://www.youtube.com/watch?v=fGQFeV32nwE&index=16&list=PL4cUxeGkcC9jBcybHMTIia56aV21o2cZ8
+
+# 4.18.18
+
+researched what we were doing wrong.  also, express doesn't know how to call app.js stuff.  so we need to find a way to grab our data and return it somehow.  possibly by saving in state?
+we made a component, and a react fragment. and we made a function that called our second render, giving us a new page without changing the URL.
+
+
+

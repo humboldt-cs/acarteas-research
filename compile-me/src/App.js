@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ReactDOM from 'react-dom';
 
 //var express = require('express');
 //var app = express();
@@ -10,9 +11,14 @@ import './App.css';
 //router.use(bodyParser.urlencoded({ extended: true }));
 
 class App extends Component {
+
+  onClickme() {
+    ReactDOM.render(<Output />, document.getElementById('root'));  
+  }
+
   render() {
     return (
-      <div className="App">
+      <div  className="App" >
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
@@ -30,12 +36,31 @@ class App extends Component {
           <br />
           Input: <input type="text" name="input" id="inputValues" placeholder = "1 2 4 17 32"/>
           <br />
-          <input type="submit" value="Submit" id="submit"/>
+          <input type="submit" value="Submit" id="submit" />
         </form>
 
 
+
+        <button onClick={this.onClickme} type="button">Click Me!</button>
+
+
+        <React.Fragment>
+          <textarea id="returnedValuesOutputBox">this is a react fragment</textarea>
+        </React.Fragment>
+
       </div>
     );
+  }
+}
+
+
+class Output extends Component{
+  render(){
+    return(
+      <div className = "Output">
+        <p>This is a second page for output</p>
+      </div>
+      );
   }
 }
 

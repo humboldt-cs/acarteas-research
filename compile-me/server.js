@@ -9,6 +9,9 @@ var app        = express();                 // define our app using express
 //including our node.js code
 var node_code = require('./source/origin');
 
+//include our app.js for views
+//var app_code = require('./src/App');
+
 var port = process.env.PORT || 8001;        // set our port
 
 // ROUTES FOR OUR API
@@ -69,8 +72,9 @@ router.get('/', function(req, res) {
 // more routes for our API will happen here
 router.post('/', function(req, res) {
     //breaking it here:
-    
-
+    //const intializedOutput = new App();
+    //res.write(body);
+    //res.end();
     //res.json({ message: 'Compiling code.  Standby!' });
 });
 
