@@ -405,5 +405,10 @@ https://www.youtube.com/watch?v=fGQFeV32nwE&index=16&list=PL4cUxeGkcC9jBcybHMTIi
 researched what we were doing wrong.  also, express doesn't know how to call app.js stuff.  so we need to find a way to grab our data and return it somehow.  possibly by saving in state?
 we made a component, and a react fragment. and we made a function that called our second render, giving us a new page without changing the URL.
 
+# 4.19.18
+
+We're still trying to figure out how to send information from node to express to react text-
+box.
+
 
 
