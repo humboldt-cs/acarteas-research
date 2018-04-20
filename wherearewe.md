@@ -412,3 +412,12 @@ box.
 
 
 
+# 4.20.18
+
+capturing information in state, and binding and setting that information in another component.
+
+currently using this guide:
+
+https://stackoverflow.com/questions/47205305/fetch-post-returns-only-id-object-in-express-api-server-react-frontend
+
+we have added code to output.jsx.   this code hasn't been tested, and will need to add the appropriate calls maybe, to the states.

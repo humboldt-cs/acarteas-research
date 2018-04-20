@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
-
+import Output from './Output.jsx';
+  
 //var express = require('express');
 //var app = express();
 //var router = express.Router();
@@ -42,30 +43,14 @@ class App extends Component {
 
         </form>
 
-
-
+        <br />
         <button onClick={this.onClickme} type="button">Click Me!</button>
         <br />
-        <React.Fragment>
-          <textarea id="returnedValuesOutputBox"> </textarea>
-        </React.Fragment>
 
       </div>
     );
   }
 }
 
-
-class Output extends Component{
-
-  render(){
-
-    return(
-      <div className = "Output">
-        <p>This is a second page for output</p>
-      </div>
-      );
-  }
-}
 
 export default App;
