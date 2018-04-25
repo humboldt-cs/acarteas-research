@@ -421,3 +421,15 @@ currently using this guide:
 https://stackoverflow.com/questions/47205305/fetch-post-returns-only-id-object-in-express-api-server-react-frontend
 
 we have added code to output.jsx.   this code hasn't been tested, and will need to add the appropriate calls maybe, to the states.
+
+
+# 4.24.18
+
+so lets break this problem down.
+we discovered the way we are trying to implement our react and express is the hard, non correct way.  we are causing ourselves problems.
+
+better way to do this is through the tools already created.  so lets build something small and SEE THE WAY ITS SUPPOSED TO WORK.
+
+everything's on fire.  and we're fine with that.
+
+

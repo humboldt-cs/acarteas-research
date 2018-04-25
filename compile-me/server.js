@@ -72,10 +72,11 @@ router.post('/', function(req, res) {
         node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
         
         //'this is an example of output: page 2, plus input vals: ' + input_vals 
-        console.log(req.body);
-        res.send(req.body);
+        //console.log(req.body);
+        //res.send(req.body);
+        strings = file,stuname,pa,input_vals;
+       	res.send(JSON.stringify({file,stuname,pa,input_vals})); 
         
-        return res.end();
     });   
 
 });
