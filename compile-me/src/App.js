@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
-import Output from './Output.jsx';
+//import Output from './Output.jsx';
   
 //var express = require('express');
 //var app = express();
@@ -12,8 +12,24 @@ import Output from './Output.jsx';
 //router.use(bodyParser.urlencoded({ extended: true }));
 
 
-
-
+//this class is left in only as an example -- tied to the button below.
+class Output extends Component{
+  
+  render(){
+    //const { filetoupload, uname, paNumber, input } = this.state;
+    return(
+        <div  className="App" >
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">page two</h1>
+        </header>
+        <p className="output">
+          Hello page two!
+        </p>  
+        </div>
+      );
+  }
+}
 
 
 class App extends Component {
@@ -39,9 +55,9 @@ class App extends Component {
         <form action = "api" method = "post" encType="multipart/form-data">
           <input type = "file" name = "filetoupload" />
           <br />
-          Student Name: <input type="text" name="uname" id="stu_name" placeholder = "Eric Kinne"/>
+          Student Name: <input type="text" name="uname" id="stu_name" placeholder = "Eric Kinne" required/>
           <br />
-          PA Number: <input type="text" name="paNumber" id="pa_name" placeholder = "12"/>
+          PA Number: <input type="text" name="paNumber" id="pa_name" placeholder = "12" required/>
           <br />
           Input: <input type="text" name="input" id="inputValues" placeholder = "1 2 4 17 32"/>
           <br />

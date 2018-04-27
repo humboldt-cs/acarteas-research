@@ -433,3 +433,19 @@ better way to do this is through the tools already created.  so lets build somet
 everything's on fire.  and we're fine with that.
 
 
+# 4.26.18
+
+discovered that what we were lacking was a "template" or "view engine" that would return a specific view.  there were many choices, including pug, jade, and others.  chose pug.  
+
+# 4.27.18
+good reference guide:
+https://expressjs.com/en/guide/using-template-engines.html
+
+another good reference for json objects:
+https://stackoverflow.com/questions/21843840/what-does-res-render-do-and-what-does-the-html-file-look-like?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+we have successfully passed variables from a form to a second page and displayed them through express; between two views in react.  
+we are currently trying to do a fs.readfile of output.txt to display by writing node code, through express routing, on a react view.
+so we are writing more server code to read an output file and display it.  
+
+getting closer to a delieverable!

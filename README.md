@@ -95,7 +95,7 @@ npm i express --save
 npm i -S formidable
 npm i nodemon --save-dev
 npm install --save-dev babel-core
-npm install --save body-parser
+npm install pug --save
 
 ```
 ## to run our program:

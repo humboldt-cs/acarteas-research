@@ -1,18 +1,19 @@
 // BASE SETUP
 // =============================================================================
-
-// call the packages we need
 var express    = require('express');        // call express
-var app        = express();
-var bodyParser = require('body-parser');
-util = require('util');              // define our app using express
-//const formidable = require('express-formidable'); // call express formidable
+var app        = express();		 			// define our app using express
+util = require('util');             
+
+//set out view controller
+app.set("view engine", "pug");
+//and file location for views
+//app.set("src", path.join(__dirname, "src"));
 
 //including our node.js code
 var node_code = require('./source/origin');
 
-//include our app.js for views
-//var app_code = require('./src/App');
+//including filesystem for readfile
+var fs = require('fs');
 
 var port = process.env.PORT || 8001;        // set our port
 
@@ -20,17 +21,11 @@ var port = process.env.PORT || 8001;        // set our port
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
-var jsonParser = bodyParser.json() 
-// create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
 // middleware to use for all requests
 router.use(function(req, res, next) {
     // do some piece of middlewhere code here
-
     next(); // make sure we go to the next routes and don't stop here
 });
-
 
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
@@ -40,7 +35,6 @@ router.get('/', function(req, res) {
 
 // more routes for our API will happen here
 router.post('/', function(req, res) {
-
 //grab our form
     var formidable = require('formidable');
     var form = new formidable.IncomingForm();
@@ -62,24 +56,57 @@ router.post('/', function(req, res) {
         var pa = fields['paNumber'];
         var input_vals = fields['input'];
         var oldpath = files.filetoupload.path;
-        //console.log('file: ' + file);
-        //console.log('student name: ' + stuname);
-        //console.log('Programming assignment: ' + pa);
-        //console.log('inputs here: ' + input_vals);
-        //console.log('Old Path: ' + oldpath);
         
-        //our node code!
-        node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
         
-        //'this is an example of output: page 2, plus input vals: ' + input_vals 
-        //console.log(req.body);
-        //res.send(req.body);
-        strings = file,stuname,pa,input_vals;
-       	res.send(JSON.stringify({file,stuname,pa,input_vals})); 
-        
-    });   
+		var output_text;
 
-});
+	    let firstPromise = function(){
+	      return new Promise(function(resolve,reject){
+	      	//our node code! this will unzip, compile, and save output.
+        	node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
+		    console.log('first promise for nodecode has been run successfully'); 
+      		resolve('firstPromise');
+	      });
+	    };
+
+	    let secondPromise = function() {
+	      return new Promise(function(resolve,reject){
+	        //read output.txt
+	        fs.readFile('./'+stuname, (err, data) => {
+			  if (err) throw err;
+			  output_text = data;
+			  console.log(data);
+			});
+
+			console.log('second promise for reading output text');
+	        resolve('secondPromise');  
+	      });        
+	    };
+
+	    let thirdPromise = function() {
+	      return new Promise(function(resolve,reject){
+	        res.render("Output", { 
+        		user: stuname,
+        		pa: pa,
+        		data: output_text
+        	});
+        	console.log('third promise for page two displayed and populated.');
+        	resolve('thirdPromise');
+	      });          
+	    };
+	     
+		firstPromise().then(function(){
+	      return secondPromise();
+	    }).then(function(){
+	      return thirdPromise();
+	    }).catch(function(){
+	      console.log('promises in server broken');
+	    });
+
+
+    }); //end form   
+
+}); //end router post
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
