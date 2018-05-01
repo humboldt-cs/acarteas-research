@@ -60,49 +60,15 @@ router.post('/', function(req, res) {
         
 		var output_text;
 
-	    let firstPromise = function(){
-	      return new Promise(function(resolve,reject){
 	      	//our node code! this will unzip, compile, and save output.
         	node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
-		    console.log('first promise for nodecode has been run successfully'); 
-      		resolve('firstPromise');
-	      });
-	    };
+		  
+        	res.render("Output",{
+        		user:stuname,
+        		pa:pa,
+        		data:output_text
 
-	    let secondPromise = function() {
-	      return new Promise(function(resolve,reject){
-	        //read output.txt
-	        fs.readFile('./'+stuname, (err, data) => {
-			  if (err) throw err;
-			  output_text = data;
-			  console.log(data);
-			});
-
-			console.log('second promise for reading output text');
-	        resolve('secondPromise');  
-	      });        
-	    };
-
-	    let thirdPromise = function() {
-	      return new Promise(function(resolve,reject){
-	        res.render("Output", { 
-        		user: stuname,
-        		pa: pa,
-        		data: output_text
         	});
-        	console.log('third promise for page two displayed and populated.');
-        	resolve('thirdPromise');
-	      });          
-	    };
-	     
-		firstPromise().then(function(){
-	      return secondPromise();
-	    }).then(function(){
-	      return thirdPromise();
-	    }).catch(function(){
-	      console.log('promises in server broken');
-	    });
-
 
     }); //end form   
 
