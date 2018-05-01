@@ -68,7 +68,7 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     }).then(function(){
       return thirdPromise();
     }).catch(function(){
-      console.log('promises in delete are broke af');
+      console.log('promises in delete are broken!');
     });
 
     callback();
