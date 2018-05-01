@@ -448,4 +448,10 @@ we have successfully passed variables from a form to a second page and displayed
 we are currently trying to do a fs.readfile of output.txt to display by writing node code, through express routing, on a react view.
 so we are writing more server code to read an output file and display it.  
 
-getting closer to a delieverable!
+closer to a delieverable!
+
+# 5.1.18
+
+we went the wrong way with pug.  new direction; going back to the basics of react and making it do what we want.  even if we have to break it.
+
+we have to kill the pug.
