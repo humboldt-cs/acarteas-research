@@ -1,3 +1,4 @@
+//this module is used to compile .cpp code and change it into an executable.
 exports.compileFunction = function(file,trialstupath,stuname,callback)
 {
 
@@ -34,48 +35,16 @@ exports.compileFunction = function(file,trialstupath,stuname,callback)
 	    //console.log("executing CMD commands");
 	    return;
 	  }
-/*
-	  process.stdout.on('data', function (data) {
-	    console.log("data in compile module -- processing", data.toString('utf-8'));
-	  });
-
-	  process.stderr.on('data', function (data) {
-
-	    console.log("error", data.toString('utf-8'));
-	  });
-
-*/
-
-	  //process.on('exit')
-	    //console.log("step 2: compile-module is finished.");
-	    //callback(fileName,file);
-	 
-	
-		
 		  
 	}
 
-	/*
-	 * Example commands.
-	 */
-	//runCmdHandler(".", "find . -name '*.js'");
-	//runCmdHandler(".", "uname -a");
-	//runCmdHandler(".", "ls -lh .");
-	//runCmdHandler("/home/anton/src/github/grunt-prepr", "grunt");
-	//var vs_path = "/C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/Tools/VsDevCmd.bat\"";
-	//var local_path = "/C:/Users/research/Desktop/acarteas-research/Trial5\""; //here we took a / off the end here!
-	
-	
 	var exe_name = 'cl.exe';
 	 
-
 	//write complie.bat
 	var batComm1 = 'call \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\Tools\\VsDevCmd.bat\"\r\n';
 	var batComm2 = 'CD \"C:\\Users\\research\\Desktop\\Working-Code\\acarteas-research\\'+ trialstupath +'\"\r\n';
 	var batComm3 = 'cl.exe ' + '*.cpp' +' /Femain.exe';
-	//console.log(sourceCpp);
-	console.log(trialstupath);
-	console.log(batComm2);
+
 	//synchonronus writefile of batch
 	fs.writeFileSync('compile.bat',batComm1);
 	
@@ -89,8 +58,6 @@ exports.compileFunction = function(file,trialstupath,stuname,callback)
 
 	console.log('step 3: compile.bat has been made');
 
-	//return output_exe;
-	
 	callback();
 	
 };

@@ -1,10 +1,10 @@
-exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
-{
-
 //Jack Daniel and Eric Misner
 // node.js server for collecting source code from students.
 //program will take .zip files and create output from source.cpp files.
 //will compare against given input in 'input.txt'.  
+
+exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
+{
 
   //sub folder where our current version is.
   var subfolder = 'compile-me';
@@ -27,7 +27,6 @@ exports.LaunchNode = function(file,stuname,PAnum,inputs,oldpath)
 
   //create the server       
         // passed to our compile module to make a .bat for that student's subfolder
-        // trial version plus student name
         var trialstupath = subfolder +'\\' + stuname;
         console.log(trialstupath);
          

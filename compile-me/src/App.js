@@ -1,22 +1,13 @@
+//this file is the main render of the view: first view!
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
-//import Output from './Output.jsx';
-  
-//var express = require('express');
-//var app = express();
-//var router = express.Router();
-//var bodyParser = require('body-parser');
-
-//router.use(bodyParser.urlencoded({ extended: true }));
-
 
 //this class is left in only as an example -- tied to the button below.
 class Output extends Component{
   
   render(){
-    //const { filetoupload, uname, paNumber, input } = this.state;
     return(
         <div  className="App" >
         <header className="App-header">
@@ -31,16 +22,16 @@ class Output extends Component{
   }
 }
 
-
+//main class
 class App extends Component {
 
-
+  //example clickthrough
   onClickme() {
     ReactDOM.render(<Output />, document.getElementById('root'));  
   }
 
 
-
+  //main html
   render() {
     return (
       <div  className="App" >

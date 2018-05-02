@@ -1,21 +1,16 @@
-// BASE SETUP
-// =============================================================================
-var express    = require('express');        // call express
-var app        = express();		 			// define our app using express
+// call express
+var express    = require('express'); 
+// define our app using express       
+var app        = express();		 			
 util = require('util');             
-
 //set out view controller
 app.set("view engine", "pug");
-//and file location for views
-//app.set("src", path.join(__dirname, "src"));
-
 //including our node.js code
 var node_code = require('./source/origin');
-
 //including filesystem for readfile
 var fs = require('fs');
-
-var port = process.env.PORT || 8001;        // set our port
+// set our port
+var port = process.env.PORT || 8001;        
 
 // ROUTES FOR OUR API
 // =============================================================================
@@ -45,7 +40,6 @@ router.post('/', function(req, res) {
 
     form.on('field' ,function(field,value){
     	fields.push([field,value])
-    	//console.log('this should show our field and vlaue'+field,value);
     });
 
     form.parse(req, function (err, fields, files){
@@ -57,12 +51,13 @@ router.post('/', function(req, res) {
         var input_vals = fields['input'];
         var oldpath = files.filetoupload.path;
         
-        
+        //create output
 		var output_text;
 
 	      	//our node code! this will unzip, compile, and save output.
         	node_code.LaunchNode(file,stuname,pa,input_vals,oldpath);
 		  
+		  	//render into a view with PUG
         	res.render("Output",{
         		user:stuname,
         		pa:pa,

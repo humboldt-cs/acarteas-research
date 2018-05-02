@@ -1,4 +1,4 @@
-
+//cleans up our filefolder once we are done with our node code.
 exports.deleteFunction =  function(file,mainExe,stuname,callback)
 {
     var fs = require('fs');
@@ -8,7 +8,6 @@ exports.deleteFunction =  function(file,mainExe,stuname,callback)
     var filearray = fs.readdirSync('./'+stuname);
     //show whats in the array
     for(var i in filearray){
-    	//console.log('This is file ' + filearray[i] + ' at location ' + i);
     	
     	//find our .obj
     	var lengthof = filearray[i].length;
