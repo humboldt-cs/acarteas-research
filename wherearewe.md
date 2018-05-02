@@ -176,7 +176,7 @@ thought; we could force a rename so we automatically know the name of the file.
 
 #3.6.18
 
-still trying to fijgure out how to delete obj.  we COULD unzip and run in a seperate temp folder, and then del '*.*'
+still trying to figure out how to delete obj.  we COULD unzip and run in a seperate temp folder, and then del '*.*'
 
 currently "main.exe" is running in the same shell, so it may be that we could make a bat to run it seperately in a new shell; thus we are able to delete or move the object later.
 
@@ -189,31 +189,7 @@ successfully moved a file into new location.
 
 next step is compiling in new directory (or moving things as the last step before delete)
 
-## hackathon
-free food
-no cost
-project
-
-#### cons:
-working with members of the community (highschoolers) with lower standards
-in the library 
-
 ---
-
-##research
-looks good on res
-get into grad school
-offers different experience
-
-####cons:
-price tag - travel, stay, food, get in.
-travel time
-unsexy topic choice -- not parallel computing
-people
-
----
-
-Hackathon chosen.
 
 #3.8.2018
 We have manged to move all files and compiles in a subfolder for testing.
@@ -319,32 +295,6 @@ outputs
 
 model: user
 username
-
-
-submission has an assignment and an author
-
-controller gives models to the view, which the view presents.
-
-manipulated.  the view then sends the modified view back to the controller, which then handles the modified model at that point.
-
-models don't know aobut views
-dmodels don't know about controllers
-
-views know about models
-a view should not know about a controller.
-
-the controller tells the view, but if the view needs to change it informs the controller its done processing.  like a submit button on a form. asks the controller, "what happens next?"
-
-we know our view is react ;  we can mock that up.  the view doesn't need to know about it.
-
-what would a view look like in react?
-
-next view is results?
-
-models should be abstracted.  not tied to any particular device; such as mongo..
-
-controller gets a pure object (poco) plain old code object.  it doesn't know how you get saved to the database.  "database, update this."  
-
 
 use express to callback at the end of our node code and create a return to our model view.  research how to return data back to the view.
 
@@ -455,3 +405,15 @@ closer to a delieverable!
 we went the wrong way with pug.  new direction; going back to the basics of react and making it do what we want.  even if we have to break it.
 
 we have to kill the pug.
+
+# 5.2.18
+
+Fixed bugs, killed white space and added comments.
+The bug wasn't returning because of a pathing issue.
+We some what have a deliverable.
+Hello World
+
+
+End_of_research_grant(){
+	Thanks for all the fish!
+}; 

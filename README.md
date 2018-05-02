@@ -4,7 +4,7 @@
 
 ## Grant research project for Professor Adam Carter, Humboldt State University.
 > Research assistant: Jack Daniel Kinne
-> Research assistant: Eric Misner
+> Research assistant: Eric Charles Misner
 
 ---
 
